@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="fabric_2.10"
+		revision="0.1-SNAPSHOT"
+		conf="runtime-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20160304153214"/>
+	<dependencies>
+		<module organisation="edu.berkeley.cs" name="chisel_2.10">
+			<revision name="2.2.32" status="release" pubdate="20160211010614" resolver="public" artresolver="public" homepage="http://chisel.eecs.berkeley.edu/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="2">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="successful" details="" size="2570" time="1391" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.10/ivy-2.2.32.xml" searched="true" original-local-location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.10/ivy-2.2.32.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.10/2.2.32/chisel_2.10-2.2.32.pom"/>
+				<caller organisation="default" name="fabric_2.10" conf="optional, compile, runtime, runtime-internal" rev="latest.release" rev-constraint-default="latest.release" rev-constraint-dynamic="latest.release" callerrev="0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="chisel_2.10" type="jar" ext="jar" status="successful" details="" size="2356134" time="6168" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.10/jars/chisel_2.10-2.2.32.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.10/2.2.32/chisel_2.10-2.2.32.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.10.6" status="release" pubdate="20150922163248" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="4">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2835" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6.pom"/>
+				<caller organisation="edu.berkeley.cs" name="chisel_2.10" conf="default, compile, runtime, master" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="2.2.32"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3206180" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.6.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.6" status="release" pubdate="20150922163247" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master, default(compile), default" position="3">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2669" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.pom"/>
+				<caller organisation="com.github.scct" name="scct_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.2"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="2.10.6"/>
+				<caller organisation="default" name="fabric_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.10.5" rev-constraint-default="2.10.5" rev-constraint-dynamic="2.10.5" callerrev="0.1-SNAPSHOT"/>
+				<caller organisation="edu.berkeley.cs" name="chisel_2.10" conf="default, compile, runtime, master" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="2.2.32"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7132001" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.6.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.10.5" status="release" pubdate="20150227072400" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.5/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master, compile(*), runtime(*), master(compile)" position="-1">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.5/scala-library-2.10.5.pom"/>
+				<evicted-by rev="2.10.6"/>
+				<caller organisation="com.github.scct" name="scct_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.2"/>
+				<caller organisation="default" name="fabric_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.10.5" rev-constraint-default="2.10.5" rev-constraint-dynamic="2.10.5" callerrev="0.1-SNAPSHOT"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="2.10.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
+				<evicted-by rev="2.10.5"/>
+				<caller organisation="com.github.scct" name="scct_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.scct" name="sbt-scct">
+			<revision name="0.2" status="release" pubdate="20131001213412" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scct.github.io/scct/" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3109" time="0" location="/home/jayant/.ivy2/cache/scala_2.10/sbt_0.13/com.github.scct/sbt-scct/ivy-0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/scct/sbt-scct_2.10_0.13/0.2/sbt-scct-0.2.pom"/>
+				<caller organisation="default" name="fabric_2.10" conf="optional, compile, runtime, runtime-internal" rev="0.2" rev-constraint-default="0.2" rev-constraint-dynamic="0.2" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<artifacts>
+					<artifact name="sbt-scct" type="jar" ext="jar" status="no" details="" size="38841" time="0" location="/home/jayant/.ivy2/cache/scala_2.10/sbt_0.13/com.github.scct/sbt-scct/jars/sbt-scct-0.2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/scct/sbt-scct_2.10_0.13/0.2/sbt-scct-0.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.scct" name="scct_2.10">
+			<revision name="0.2" status="release" pubdate="20131001200800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scct.github.com/scct" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="1">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3141" time="0" location="/home/jayant/.ivy2/cache/com.github.scct/scct_2.10/ivy-0.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/scct/scct_2.10/0.2/scct_2.10-0.2.pom"/>
+				<caller organisation="com.github.scct" name="sbt-scct" conf="default, compile, runtime, master" rev="0.2" rev-constraint-default="0.2" rev-constraint-dynamic="0.2" callerrev="0.2"/>
+				<artifacts>
+					<artifact name="scct_2.10" type="jar" ext="jar" status="no" details="" size="232241" time="0" location="/home/jayant/.ivy2/cache/com.github.scct/scct_2.10/jars/scct_2.10-0.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/scct/scct_2.10/0.2/scct_2.10-0.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

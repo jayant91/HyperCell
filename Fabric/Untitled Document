@@ -1,0 +1,17 @@
+ sbt run
+[info] Set current project to fabric (in build file:/home/jayant/HyperCell/Fabric/)
+[info] Updating {file:/home/jayant/HyperCell/Fabric/}fabric...
+[info] Resolving org.fusesource.jansi#jansi;1.4 ...
+[info] downloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.10/2.2.32/chisel_2.10-2.2.32.jar ...
+[info] 	[SUCCESSFUL ] edu.berkeley.cs#chisel_2.10;2.2.32!chisel_2.10.jar (6168ms)
+[info] Done updating.
+[warn] Scala version was updated by one of library dependencies:
+[warn] 	* org.scala-lang:scala-library:(2.10.5, 2.10.2) -> 2.10.6
+[warn] To force scalaVersion, add the following:
+[warn] 	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
+[warn] Run 'evicted' to see detailed eviction warnings
+[info] Compiling 8 Scala sources to /home/jayant/HyperCell/Fabric/target/scala-2.10/classes...
+[info] 'compiler-interface' not yet compiled for Scala 2.10.5. Compiling...
+[info]   Compilation completed in 11.348 s
+[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
+
