@@ -2,14 +2,16 @@ package HyperCell
 
 import Chisel._
 import HyperCellParams.GlobalConfig._
-import HyperCellParams.fabInConfig._
+import HyperCellParams.StoreSeqConfig._
 
-class fabInSeqCtrl extends Module{
+class storeSeqCtrl extends Module{
 	val io 	= new Bundle{
 	
-		val inConfig			= UInt(INPUT, width = datawidth)
+		val inConfig			= UInt(INPUT, width = dataWidth)
 		val inValid			= Bool(INPUT)
 		
+		val spillEnd			= Bool(OUTPUT)
+		val nextIterStart		= Bool(OUTPUT)
 		val seqMemAddr			= UInt(OUTPUT, width = seqMemAddrWidth)
 		val seqMemAddrValid		= Bool(OUTPUT)
 		
@@ -18,22 +20,24 @@ class fabInSeqCtrl extends Module{
 		val computeDone			= Bool(OUTPUT)
 	}
 	
-	val fabInSeqCtrlConfigure 		= Module(new controllerConfigure(2))
-	val computeCtrl				= fabInSeqCtrlConfigure.io.computeCtrl
-	val computeCtrlValid			= fabInSeqCtrlConfigure.io.computeCtrlValid
-	fabInSeqCtrlConfigure.io.inConfig	:= io.inConfig
-	fabInSeqCtrlConfigure.io.inValid	:= io.inValid
+	val storeCtrlConfigure 		= Module(new controllerConfigure(1))
+	val computeCtrl			= storeCtrlConfigure.io.computeCtrl
+	val computeCtrlValid		= storeCtrlConfigure.io.computeCtrlValid
+	storeCtrlConfigure.io.inConfig	:= io.inConfig
+	storeCtrlConfigure.io.inValid	:= io.inValid
 	
 	//REGISTERS
 	val prologueDepth		= Reg(init = UInt("b0", width = seqMemAddrWidth))
 	val epilogueDepth		= Reg(init = UInt("b0", width = seqMemAddrWidth))
 	val steadyStateDepth		= Reg(init = UInt("b0", width = seqMemAddrWidth))
 	val epilogueSpill		= Reg(init = UInt("b0", width = seqMemAddrWidth))
-	val iterCount			= Reg(init = UInt("b0", width = iterCountWidth))
+	val iterCount			= Reg(init = UInt("b0", width = storeIterCountWidth))
 	val seqMemAddr			= Reg(init = UInt("b0", width = seqMemDepth))
-	val currentIter			= Reg(init = UInt("b0", width = iterCountWidth))	
+	val currentIter			= Reg(init = UInt("b0", width = storeIterCountWidth))	
 	
+	val spillEnd			= Reg(init = Bool(false))
 	val computeEnable		= Reg(init = Bool(false))
+	val nextIterStart		= Reg(init = Bool(false))
 	
 	val startComputeValid		= Bool()		
 	val resetComputeValid		= Bool()		
@@ -54,7 +58,7 @@ class fabInSeqCtrl extends Module{
 	
 	
 	when(computeEnable && nextRequest){
-		when((epilogueDepth != UInt(0)) && (steadyStateDepth === UInt(0))){
+		when((epilogueDepth =/= UInt(0)) && (steadyStateDepth === UInt(1))){
 			computeDone	:=	(seqMemAddr === (lastAddr -UInt(1)))
 		}
 		
@@ -69,7 +73,7 @@ class fabInSeqCtrl extends Module{
 	
 	when(startComputeValid || resetComputeValid || computeDone){
 		//No need to start if none of prologue, epilogue and ss are 0.
-		when(startComputeValid && (lastAddr != UInt(0))){
+		when(startComputeValid && (lastAddr =/= UInt(0))){
 			computeEnable 	:= Bool(true)
 		}
 
@@ -87,31 +91,40 @@ class fabInSeqCtrl extends Module{
 		when(startComputeValid){
 			seqMemAddr	:= UInt(0)
 			currentIter	:= UInt(0)
+			nextIterStart	:= Bool(false)
+			spillEnd	:= Bool(false)
 		}
 		
 		.otherwise{
 			//end of iteration, loop back
 			when(seqMemAddr === (ssEnd - UInt(1))){
+				spillEnd	:= Bool(false)
 				//if not last iteration or if there is spill, loop back to end of prologue
-				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill != UInt(0))){
+				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill =/= UInt(0))){
+					nextIterStart		:= Bool(true)
 					seqMemAddr 		:= prologueDepth
 					currentIter		:= currentIter + UInt(1);
 				}
 				
 				//last iteration and no spill, go to epilogue 
 				.otherwise{
+					nextIterStart		:= Bool(false)
 					seqMemAddr		:= seqMemAddr + UInt(1)
 				}
 			}
 			
 			//if epilogue spill, and last spill address, go to epilogue  
 			.elsewhen((currentIter === iterCount) &&(seqMemAddr === (ssEnd- UInt(1)))){
+				nextIterStart		:= Bool(false)
+				spillEnd		:= Bool(true)
 				seqMemAddr		:= ssEnd
 			}
 			
 			
 			.otherwise{
 				seqMemAddr		:= seqMemAddr + UInt(1);
+				nextIterStart		:= Bool(false)
+				spillEnd		:= Bool(false)
 			}
 		}
 		
@@ -134,8 +147,8 @@ class fabInSeqCtrl extends Module{
 	
 	
 	when(io.inValid){
-		when(io.inConfig(datawidth-1, datawidth -fabSeqWidth) === UInt(259)){
-			when(io.inConfig(datawidth -fabSeqWidth -1, datawidth -fabSeqWidth -dWidth) === UInt(0)){
+		when(io.inConfig(dataWidth-1, dataWidth -srWidth) === UInt(259)){
+			when(io.inConfig(dataWidth -srWidth -1, dataWidth -srWidth -sWidth) === UInt(0)){
 				when(io.inConfig(xBitNo) === UInt(0)){
 					prologueDepth		:= io.inConfig(prologueSize-1, 0)
 					steadyStateDepth	:= io.inConfig(steadyStateSize + prologueSize -1 , prologueSize)
@@ -146,7 +159,7 @@ class fabInSeqCtrl extends Module{
 				}
 				
 			}
-			.elsewhen(io.inConfig(datawidth -fabSeqWidth -1, datawidth -fabSeqWidth -dWidth) === UInt(1)){
+			.elsewhen(io.inConfig(dataWidth -srWidth -1, dataWidth -srWidth -sWidth) === UInt(1)){
 				iterCount		:= io.inConfig(iterCntSize-1, 0)
 			}
 		}
@@ -156,11 +169,15 @@ class fabInSeqCtrl extends Module{
 	when(io.seqProceed && computeEnable){
 		nextRequest		:= Bool(true)
 		io.seqMemAddr		:= seqMemAddr
+		io.nextIterStart	:= nextIterStart
+		io.spillEnd		:= spillEnd
 		io.seqMemAddrValid	:= Bool(true)
 	}
 	.otherwise{
 		nextRequest		:= Bool(false)
 		io.seqMemAddr		:= seqMemAddr
+		io.nextIterStart	:= nextIterStart
+		io.spillEnd		:= spillEnd
 		io.seqMemAddrValid	:= Bool(false)
 	}
 	

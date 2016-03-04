@@ -70,7 +70,7 @@ class loadSeqCtrl extends Module{
 	
 	
 	when(computeEnable && nextRequest){
-		when((epilogueDepth != UInt(0)) && (steadyStateDepth === UInt(0))){
+		when((epilogueDepth =/= UInt(0)) && (steadyStateDepth === UInt(0))){
 			computeDone	:=	(seqMemAddr === (lastAddr - UInt(1)))
 		}
 		
@@ -85,7 +85,7 @@ class loadSeqCtrl extends Module{
 	
 	when(startComputeValid || resetComputeValid || computeDone){
 		//No need to start if none of prologue, epilogue and ss are 0.
-		when(startComputeValid && (lastAddr != UInt(0))){
+		when(startComputeValid && (lastAddr =/= UInt(0))){
 			computeEnable 	:= Bool(true)
 		}
 
@@ -114,7 +114,7 @@ class loadSeqCtrl extends Module{
 			when(seqMemAddr === (ssEnd -UInt(1))){
 				spillEnd	:= Bool(false)
 				//if not last iteration or if there is spill, loop back to end of prologue
-				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill != UInt(0))){
+				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill =/= UInt(0))){
 					nextIterStart		:= Bool(true)
 					seqMemAddr 		:= prologueDepth
 					currentIter		:= currentIter + UInt(1);
