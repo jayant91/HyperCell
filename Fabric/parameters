@@ -1,0 +1,12 @@
+parameters
+
+configRegWidth		= width of the config register for switch
+cuConfigRegWidth	= Computing Unit config Register width
+depthParam		= depth of the FIFO
+ownVal			= number specifying its own place for the FIFO
+ports			= no of ports that the particular switch is having
+widthCoord		= width of the coordinate field in the data packet
+widthParam		= width of the input output data at any port
+xCoord			= x coordinate of the switch
+yCoord			= y coordinate of the switch
+

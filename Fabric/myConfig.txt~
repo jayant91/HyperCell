@@ -1,0 +1,46 @@
+//Viterbi
+//24 CEs out of 25 are used
+//Type 2 will not change mapping
+//This file gives config for Type1, Type2, Type5, Type4
+
+//{xAbs,yAbs,(East,North,West,South,NorthEast,NorthWest,SouthWest,SouthEast)
+//
+//,OpCode,OpreandASel,OperandBSel} 
+
+{0,0,(X,X,X,NE,E,X,X,X),MIN,SW,NE,0,1,0,0}
+{1,0,(X,S,NE,X,X,X,X,X),ADD,NW,NE,0,1,0,0}
+{2,0,(X,S,X,X,X,X,X,X),ADD,NW,NE,0,0,0,1}
+{3,0,(X,S,X,NE,N,X,X,X),MIN,NW,SW,0,1,0,0}
+{4,0,(X,S,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{5,0,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{0,1,(X,X,X,X,W,X,X,X),AND,NW,SW,1,0,0,0}
+{1,1,(NW,X,X,X,S,X,E,S),ADD,NE,SW,1,0,0,0}
+{2,1,(NW,S,NE,X,X,X,W,W),ADD,NW,SE,0,1,0,0}
+{3,1,(X,X,X,SW,X,S,S,W),X,X,X,0,0,0,0}
+{4,1,(X,S,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{5,1,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{0,1,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{0,2,(X,X,X,X,W,X,X,W),SRL,SW,NW,1,0,0,0}
+{1,2,(X,X,X,X,NW,X,X,X),AND,SW,SE,1,0,0,0}
+{2,2,(X,X,X,X,X,S,NW,NW),X,X,X,0,0,0,0}
+{3,2,(X,X,X,X,X,X,X,X),AND,SE,NE,0,0,1,0}
+{4,2,(X,X,X,X,X,S,X,X),SRL,NE,SE,0,0,1,0}
+{5,2,(X,X,X,X,X,E,X,X),X,X,X,0,0,0,0}
+{0,3,(X,X,X,X,X,X,X,W),X,X,X,0,0,0,0}
+{1,3,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{2,3,(X,X,X,X,X,X,X,X),ADD,NW,SE,0,0,0,1}
+{3,3,(X,X,X,X,SE,SE,X,X),ADD,NE,SW,0,0,1,0}
+{4,3,(X,X,X,X,X,X,SE,X),SRL,SE,NE,0,0,1,0}
+{5,3,(X,X,X,X,X,E,E,X),X,X,X,0,0,0,0}
+{0,4,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{1,4,(X,X,X,X,X,X,X,X),MIN,NE,SE,0,0,0,1}
+{2,4,(X,NE,X,X,N,E,X,N),ADD,SW,SE,0,1,0,0}
+{3,4,(SW,X,SE,X,E,E,X,X),ADD,SW,SE,0,0,0,1}
+{4,4,(X,X,SE,X,W,N,N,X),MIN,NE,SW,0,0,0,1}
+{5,4,(X,X,X,X,X,X,E,X),X,X,X,0,0,0,0}
+{0,5,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{1,5,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{2,5,(X,SW,X,N,X,X,S,X),X,X,X,0,0,0,0}
+{3,5,(X,X,X,X,X,X,X,X),X,X,X,0,0,0,0}
+{4,5,(SW,X,X,N,X,X,X,X),X,X,X,1,0,0,0}
+{5,5,(X,SW,X,X,X,X,W,X),X,X,X,0,1,0,0}

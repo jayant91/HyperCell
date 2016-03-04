@@ -1,0 +1,228 @@
+package HyperCell
+
+import Chisel._
+import HyperCellParams.GlobalConfig._
+import HyperCellParams.fabOutConfig._
+
+class fabOutSeqCtrl extends Module{
+	val io 		= new Bundle{
+		val inConfig		= UInt(INPUT, width = datawidth)
+		val inValid		= Bool(INPUT)
+		
+		val outLocValid		= Vec.fill(fabPortCount){Bool(INPUT)}
+		
+		val seqMemAddr		= Vec.fill(fabPortCount){UInt(OUTPUT, width = seqMemAddrWidth)}
+		val seqMemAddrValid	= Vec.fill(fabPortCount){Bool(OUTPUT)}
+		
+		val seqProceed		= Vec.fill(fabPortCount){Bool(INPUT)}
+		
+	}
+	
+	
+	val fabOutSeqCtrlConfigure 		= Module(new controllerConfigure(2))
+	val computeCtrl				= fabOutSeqCtrlConfigure.io.computeCtrl
+	val computeCtrlValid			= fabOutSeqCtrlConfigure.io.computeCtrlValid
+	fabOutSeqCtrlConfigure.io.inConfig	:= io.inConfig
+	fabOutSeqCtrlConfigure.io.inValid	:= io.inValid
+	
+	//REGISTERS
+	val prologueDepth		= Reg(init = UInt("b0", width = seqMemAddrWidth))
+	val epilogueDepth		= Reg(init = UInt("b0", width = seqMemAddrWidth))
+	val steadyStateDepth		= Reg(init = UInt("b0", width = seqMemAddrWidth))
+	val epilogueSpill		= Reg(init = UInt("b0", width = seqMemAddrWidth))
+	val iterCount			= Reg(init = UInt("b0", width = iterCountWidth))
+	val seqMemAddr			= Reg(init = UInt("b0", width = seqMemAddrWidth))
+	val currentIter			= Reg(init = UInt("b0", width = iterCountWidth))
+	
+	val reqDone			= Vec.fill(fabPortCount){Reg(init = Bool(false))}	
+	val reqDoneWire			= Vec.fill(fabPortCount){Bool()}
+	
+	val computeEnable		= Reg(init = Bool(false))
+	
+	val startComputeValid		= Bool()		
+	val resetComputeValid		= Bool()		
+	val nextSeqRdy			= Bool()
+	val computeDone			= Bool()
+	startComputeValid		:= Bool(false)		
+	resetComputeValid		:= Bool(false)
+	nextSeqRdy			:= Bool(false)
+	computeDone			:= Bool(false)
+	
+	val nextRequest			= Vec.fill(fabPortCount){Bool()}	
+	for(i<-0 until fabPortCount){
+		nextRequest(i)			:= Bool(false)
+	}
+	
+	val ssEnd			= UInt(width = seqMemDepth+2)			
+	val lastAddr			= UInt(width = seqMemDepth+3)			
+	val spillEndAddr		= UInt(width = seqMemDepth+2)			
+	
+	ssEnd		:= prologueDepth + steadyStateDepth 
+	lastAddr	:= ssEnd + epilogueDepth
+	spillEndAddr	:= prologueDepth + epilogueSpill
+	
+	
+	when(computeEnable && nextSeqRdy){
+		when((epilogueDepth =/= UInt(0)) && (steadyStateDepth === UInt(0))){
+			computeDone	:=	(seqMemAddr === (lastAddr -UInt(1)))
+		}
+		
+		.elsewhen(epilogueSpill === UInt(0)){
+			computeDone	:= 	(seqMemAddr === (lastAddr - UInt(1))) && ((currentIter + UInt(1)) === iterCount)
+		}
+		
+		.otherwise{
+			computeDone	:= 	(seqMemAddr === (spillEndAddr - UInt(1))) && ((currentIter) === iterCount)
+		}
+	}
+	
+	when(startComputeValid || resetComputeValid || computeDone){
+		//No need to start if none of prologue, epilogue and ss are 0.
+		when(startComputeValid && (lastAddr =/= UInt(0))){
+			computeEnable 	:= Bool(true)
+		}
+
+		.elsewhen (resetComputeValid){
+			computeEnable	:= Bool(false)
+		}
+			
+		.otherwise{
+			computeEnable 	:= Bool(false)
+		}
+	}
+	
+	
+	//Whenever a port processes current sequence, the corresponding
+ 	//request done reg bit is set. Only when all valid ports are
+	//processed, the bits are reset.
+	when(computeEnable){
+		for(i<-0 until fabPortCount){
+			reqDoneWire(i)		:= reqDone(i)
+		}
+	
+		for(i<-0 until fabPortCount){
+			when(nextRequest(i) || (~io.outLocValid(i))){
+				reqDoneWire(i)		:= Bool(true)
+			}.otherwise{
+				reqDoneWire(i)		:= reqDone(i)
+			}
+			
+			when(reqDoneWire.fold(Bool(true))(_&&_)){
+				nextSeqRdy		:= Bool(true)
+				for(i<-0 until fabPortCount){
+					reqDone(i)		:= Bool(false)
+				}
+			}
+			.otherwise{
+				nextSeqRdy		:= Bool(false)
+				for(i<-0 until fabPortCount){
+					reqDone(i)		:= reqDoneWire(i)
+				}
+			}
+		}
+	}
+	.otherwise{
+		for(i<-0 until fabPortCount){
+			reqDoneWire(i)		:= Bool(false)
+		}
+	}
+	
+	
+			
+	
+	//next request is set only on computeEnable		
+	when(startComputeValid || nextSeqRdy){
+		when(startComputeValid){
+			seqMemAddr	:= UInt(0)
+			currentIter	:= UInt(0)
+		}
+		
+		.otherwise{
+			//end of iteration, loop back
+			when(seqMemAddr === (ssEnd - UInt(1))){
+				//if not last iteration or if there is spill, loop back to end of prologue
+				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill =/= UInt(0))){
+					seqMemAddr 		:= prologueDepth
+					currentIter		:= currentIter + UInt(1);
+				}
+				
+				//last iteration and no spill, go to epilogue 
+				.otherwise{
+					seqMemAddr		:= seqMemAddr + UInt(1)
+				}
+			}
+			
+			//if epilogue spill, and last spill address, go to epilogue  
+			.elsewhen((currentIter === iterCount) &&(seqMemAddr === (ssEnd- UInt(1)))){
+				seqMemAddr		:= ssEnd
+			}
+			
+			
+			.otherwise{
+				seqMemAddr		:= seqMemAddr + UInt(1);
+			}
+		}
+
+	}
+	
+	for(portNo <-0 until fabPortCount){
+		
+		when((~reqDone(portNo)) && computeEnable){
+			io.seqMemAddr(portNo)		:= seqMemAddr
+			io.seqMemAddrValid(portNo)	:= Bool(true)
+		}
+		.otherwise{
+			io.seqMemAddr(portNo)		:= seqMemAddr
+			io.seqMemAddrValid(portNo)	:= Bool(false)
+		}
+		
+		when(io.seqProceed(portNo)){
+			nextRequest(portNo)		:= Bool(true)
+		}
+		.otherwise{
+			nextRequest(portNo)		:= Bool(false)
+		}
+	}
+
+
+
+	
+	when(computeCtrlValid){
+		when(computeCtrl){
+			startComputeValid	:= Bool(true)	
+		}
+		.otherwise{
+			resetComputeValid	:= Bool(true)
+		}	
+	}
+	.otherwise{
+		startComputeValid	:= Bool(false) 
+		resetComputeValid	:= Bool(false)
+	}
+	
+	
+	
+	when(io.inValid){
+		when(io.inConfig(datawidth-1, datawidth -fabSeqWidth) === UInt(258)){
+			when(io.inConfig(datawidth -fabSeqWidth -1, datawidth -fabSeqWidth -dWidth) === UInt(0)){
+				when(io.inConfig(xBitNo) === UInt(0)){
+					prologueDepth		:= io.inConfig(prologueSize-1, 0)
+					steadyStateDepth	:= io.inConfig(steadyStateSize + prologueSize -1 , prologueSize)
+				}
+				.elsewhen(io.inConfig(xBitNo) === UInt(1)){
+					epilogueDepth		:= io.inConfig(epilogueSize-1, 0)
+					epilogueSpill		:= io.inConfig(epilogueSpillSize + epilogueSize-1, epilogueSize)
+				}
+				
+			}
+			.elsewhen(io.inConfig(datawidth -fabSeqWidth -1, datawidth -fabSeqWidth -dWidth) === UInt(1)){
+				iterCount		:= io.inConfig(iterCntSize-1, 0)
+			}
+		}
+
+	}
+	
+	
+	computeDone		:= (!computeEnable)
+
+}
