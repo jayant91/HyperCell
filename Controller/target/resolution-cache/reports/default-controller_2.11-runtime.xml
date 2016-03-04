@@ -7,7 +7,7 @@
 		revision="0.1-SNAPSHOT"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160304144632"/>
+		date="20160304153130"/>
 	<dependencies>
 		<module organisation="edu.berkeley.cs" name="chisel_2.11">
 			<revision name="2.2.32" status="release" pubdate="20160211010719" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="1">
