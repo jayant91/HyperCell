@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#fabric_2.11;0.1-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#fabric_2.11;0.1-SNAPSHOT->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2c44bfe9[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@70cc7c93[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -17,21 +17,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies default#fabric_2.11;0.1-SNAPSHOT->edu.berkeley.cs#chisel_2.11;2.2.29 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving edu.berkeley.cs#chisel_2.11;2.2.29 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: edu.berkeley.cs#chisel_2.11;2.2.29 {compile=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving edu.berkeley.cs#chisel_2.11;2.2.29 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: edu.berkeley.cs#chisel_2.11;2.2.29 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/jayant/.ivy2/local/edu.berkeley.cs/chisel_2.11/2.2.29/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for edu.berkeley.cs#chisel_2.11;2.2.29[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for edu.berkeley.cs#chisel_2.11;2.2.29[0m
-[0m[[0mdebug[0m] [0m		=> https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom (2.2.29)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] edu.berkeley.cs#chisel_2.11;2.2.29!chisel_2.11.pom(pom.original) (1502ms)[0m
-[0m[[0mdebug[0m] [0m		tried /home/jayant/.ivy2/local/edu.berkeley.cs/chisel_2.11/2.2.29/jars/chisel_2.11.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar[0m
-[0m[[0mdebug[0m] [0m	found edu.berkeley.cs#chisel_2.11;2.2.29 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: edu.berkeley.cs#chisel_2.11;2.2.29[0m
+[0m[[0mdebug[0m] [0m	found edu.berkeley.cs#chisel_2.11;2.2.29 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#fabric_2.11;0.1-SNAPSHOT->edu.berkeley.cs#chisel_2.11;2.2.29 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#fabric_2.11;0.1-SNAPSHOT->edu.berkeley.cs#chisel_2.11;2.2.29 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies edu.berkeley.cs#chisel_2.11;2.2.29->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
@@ -309,19 +296,14 @@
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.11.7!scala-library.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] edu.berkeley.cs#chisel_2.11;2.2.29!chisel_2.11.jar (6162ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] edu.berkeley.cs#chisel_2.11;2.2.29!chisel_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.6!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.7!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.11.7!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4464ms :: artifacts dl 6173ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 297ms :: artifacts dl 12ms[0m
 [0m[[0mdebug[0m] [0m	report for default#fabric_2.11;0.1-SNAPSHOT compile produced in /home/jayant/HyperCell/Fabric/target/resolution-cache/reports/default-fabric_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#fabric_2.11;0.1-SNAPSHOT runtime produced in /home/jayant/HyperCell/Fabric/target/resolution-cache/reports/default-fabric_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#fabric_2.11;0.1-SNAPSHOT test produced in /home/jayant/HyperCell/Fabric/target/resolution-cache/reports/default-fabric_2.11-test.xml[0m
@@ -335,5 +317,5 @@
 [0m[[0mdebug[0m] [0m	report for default#fabric_2.11;0.1-SNAPSHOT docs produced in /home/jayant/HyperCell/Fabric/target/resolution-cache/reports/default-fabric_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#fabric_2.11;0.1-SNAPSHOT pom produced in /home/jayant/HyperCell/Fabric/target/resolution-cache/reports/default-fabric_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#fabric_2.11;0.1-SNAPSHOT scala-tool produced in /home/jayant/HyperCell/Fabric/target/resolution-cache/reports/default-fabric_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4464ms resolve - 6173ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (297ms resolve - 12ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

@@ -7,15 +7,15 @@
 		revision="0.1-SNAPSHOT"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160304155339"/>
+		date="20160304171710"/>
 	<dependencies>
 		<module organisation="edu.berkeley.cs" name="chisel_2.11">
-			<revision name="2.2.29" status="release" pubdate="20151001040455" resolver="public" artresolver="public" homepage="http://chisel.eecs.berkeley.edu/" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+			<revision name="2.2.29" status="release" pubdate="20151001040455" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
 				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="successful" details="" size="2570" time="1502" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/ivy-2.2.29.xml" searched="true" original-local-location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/ivy-2.2.29.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom"/>
+				<metadata-artifact status="no" details="" size="3370" time="0" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/ivy-2.2.29.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom"/>
 				<caller organisation="default" name="fabric_2.11" conf="test-internal, test, optional, compile, provided, runtime" rev="2.2.29" rev-constraint-default="2.2.29" rev-constraint-dynamic="2.2.29" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="chisel_2.11" type="jar" ext="jar" status="successful" details="" size="2059832" time="6162" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.29.jar">
+					<artifact name="chisel_2.11" type="jar" ext="jar" status="no" details="" size="2059832" time="0" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.29.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar"/>
 					</artifact>
 				</artifacts>
