@@ -1,0 +1,267 @@
+//Config_13.txt
+//The File has to be saved as Config_Data.txt in Testbench/data_files/
+0005556A//Which ports need loopback(used only in loopback testing, One Hot Encoded, Here Port 1,3,5,6,8,10,12,14,16,18)
+0 //Maximum random skip value for config. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for load. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for str. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+101//No. of config words  starting from next
+20000000
+89000010
+87000090
+83000090
+810000e0
+8a3ac688
+885ac7c8
+86faa688
+845ac7c8
+82faa688
+80fab688
+20000001
+8ae6c6b0
+80f9ca88
+20000002
+89000010
+810000e0
+8a3ac688
+80fab688
+20000003
+8ae6c6b0
+80f9ca88
+20000004
+89000010
+87000030
+83000030
+810000e0
+8a3ac688
+80fab688
+20000005
+8ae6c6b0
+88e2c688
+86f8468d
+84e2c688
+82f8468d
+80f9ca88
+40000300//load prologue
+40020000//load epilogue
+40080010//Iteration count
+40100000//Load seq mem
+80000000
+80000000
+80000011
+80000042
+80000002
+80000080
+80000012
+800000C2
+80000004
+80000100
+80000013
+80000142
+40180000//Load Reg lookup
+80000800//Reg 1 Index 0
+80020000
+80000020//Reg 0 Index 0
+80020000
+80000840//Reg 1 Index 1
+80020000
+80000021//Reg 0 Index 1
+80020000
+80000880//Reg 1 Index 2
+80020000
+80000022//Reg 0 Index 2
+80020000
+40200000//Load Base address lookup
+D0001000
+80000000
+D8002000
+80000000
+40280000//Load Loop Offset lookup
+80000006
+80000000
+80000003
+80000000
+40400483//Fabric Input Prologue
+40420009//Fabric Input Epilogue
+4048000F//Fabric Input Iteration count
+40500000//Fabric Input Sequence Memory
+80C0BC0A//P10-> B(0,0), P11-> B(1,0)
+80000000
+80000000
+80000000
+80C2BC2A//P10-> B(0,1), P11-> B(1,1)
+80000000
+80000000
+80000000
+80C4BC4A//P10-> B(0,2), P11-> B(1,2)
+80000000
+80000000
+80000000
+88C0BC0A//( P10 -> B(0,0),P11 -> B(1,0), P8 -> B(2,0), P9 -> B(3,0), P12 -> B(4,0), P13 -> B(5,0), P14 -> B(6,0), P15 -> B(7,0) 
+B8198138
+83F03B03
+80000006
+A0000000//P0 -> B(2,1), P1 -> B(3,1), P2 -> B(4,1), P3 -> B(5,1), P4 -> B(6,1), P5 -> B(7,1) 
+F8458438
+89709308
+80000006
+C6000000//P6 -> B(2,2), P7 -> B(3,2), P16 -> B(4,2), P17 -> B(5,2), P18 -> B(6,2), P19 -> B(7,2) 
+B8A188F8
+94F14B14
+80000006
+E8C2BC2A//( P10 -> B(0,1),P11 -> B(1,1), P8 -> B(2,3), P9 -> B(3,3), P12 -> B(4,3), P13 -> B(5,3), P14 -> B(6,3), P15 -> B(7,3) 
+B8D98D38
+9BF1BB1B
+80000006
+80000000//P0 -> B(2,4), P1 -> B(3,4), P2 -> B(4,4), P3 -> B(5,4), P4 -> B(6,4), P5 -> B(7,4) 
+F9059039
+A1721320
+80000006
+A6000000//P6 -> B(2,5), P7 -> B(3,5), P16 -> B(4,5), P17 -> B(5,5), P18 -> B(6,5), P19 -> B(7,5) 
+B96194F9
+ACF2CB2C
+80000006
+C8C4BC4A//( P10 -> B(0,2),P11 -> B(1,2), P8 -> B(2,6), P9 -> B(3,6), P12 -> B(4,6), P13 -> B(5,6), P14 -> B(6,6), P15 -> B(7,6) 
+B9999939
+B3F33B33
+80000006
+E0000000//P0 -> B(2,7), P1 -> B(3,7), P2 -> B(4,7), P3 -> B(5,7), P4 -> B(6,7), P5 -> B(7,7) 
+F9C59C39
+B9739338
+80000006
+86000000//P6 -> B(2,8), P7 -> B(3,8), P16 -> B(4,8), P17 -> B(5,8), P18 -> B(6,8), P19 -> B(7,8) 
+BA21A0FA
+C4F44B44
+80000006
+88000000//P8 -> B(2,0), P9 -> B(3,0), P12 -> B(4,0), P13 -> B(5,0), P14 -> B(6,0), P15 -> B(7,0) 
+B8198138
+83F03B03
+80000006
+A0000000//P0 -> B(2,1), P1 -> B(3,1), P2 -> B(4,1), P3 -> B(5,1), P4 -> B(6,1), P5 -> B(7,1) 
+F8458438
+89709308
+80000006
+C6000000//P6 -> B(2,2), P7 -> B(3,2), P16 -> B(4,2), P17 -> B(5,2), P18 -> B(6,2), P19 -> B(7,2) 
+B8A188F8
+94F14B14
+80000006
+E8000000//( P8 -> B(2,3), P9 -> B(3,3), P12 -> B(4,3), P13 -> B(5,3), P14 -> B(6,3), P15 -> B(7,3) 
+B8D98D38
+9BF1BB1B
+80000006
+80000000//P0 -> B(2,4), P1 -> B(3,4), P2 -> B(4,4), P3 -> B(5,4), P4 -> B(6,4), P5 -> B(7,4) 
+F9059039
+A1721320
+80000006
+A6000000//P6 -> B(2,5), P7 -> B(3,5), P16 -> B(4,5), P17 -> B(5,5), P18 -> B(6,5), P19 -> B(7,5) 
+B96194F9
+ACF2CB2C
+80000006
+C8000000//( P8 -> B(2,6), P9 -> B(3,6), P12 -> B(4,6), P13 -> B(5,6), P14 -> B(6,6), P15 -> B(7,6) 
+B9999939
+B3F33B33
+80000006
+E0000000//P0 -> B(2,7), P1 -> B(3,7), P2 -> B(4,7), P3 -> B(5,7), P4 -> B(6,7), P5 -> B(7,7) 
+F9C59C39
+B9739338
+80000006
+86000000//P6 -> B(2,8), P7 -> B(3,8), P16 -> B(4,8), P17 -> B(5,8), P18 -> B(6,8), P19 -> B(7,8) 
+BA21A0FA
+C4F44B44
+80000006
+40800480//Fabric Output Prologue
+40820000//Fabric Output Epilogue
+40880010//Fabric Output Iteration count
+4A900003//Fabric Output Destination 
+A0820000//Reg2-7 Index 0
+80050410
+E1861000//Reg2-7 Index 1
+80050C30
+A28A2000//Reg2-7 Index 2
+80071451
+E38E3000//Reg2-7 Index 3
+80051C71
+A4924000//Reg2-7 Index 4
+80052492
+E5965000//Reg2-7 Index 5
+80072CB2
+A69A6000//Reg2-7 Index 6
+800534D3
+E79E7000//Reg2-7 Index 7
+80053CF3
+A8A28000//Reg2-7 Index 8
+80074514
+41900004//Fabric Output Destination 
+43900004//Fabric Output Destination 
+45900004//Fabric Output Destination 
+46900004//Fabric Output Destination 
+48900004//Fabric Output Destination 
+4C900004//Fabric Output Destination 
+4E900004//Fabric Output Destination 
+50900004//Fabric Output Destination 
+52900004//Fabric Output Destination 
+40C00480//Store Seq Prologue
+40C20000//Store Seq Epilogue
+40C80030//Store Seq Iteration Count
+40D00000//Store Sequence Memory
+80100004
+80000200//Port8
+80300005
+80000300//Port12
+80310006
+80000380//Port14
+80600000
+80000040//Port 1
+80700001
+800000C0//Port3
+80500002
+80000140//Port5
+80E00003
+80000180//Port6
+80010007
+80000400//Port16
+80100008
+80000480//Port18
+40D80000//Store Base addr lookup
+80000000
+80000000
+88000000
+80000000
+90000000
+80000000
+98000000
+80000000
+A0000000
+80000000
+A8000000
+80000000
+B0000000
+80000000
+B8000000
+80000000
+C0000000
+80000000
+C8000000
+80000000
+40E00000//Store Offset lookup
+80000001
+80000000
+80000002
+80000000
+80000003
+80000000
+80000004
+80000000
+80000005
+80000000
+80000006
+80000000
+80000007
+80000000
+80000008
+80000000
+80000009
+80000000
+00000001//Start Compute

@@ -1,0 +1,98 @@
+//Config_kernel2.txt
+//The File has to be saved as Config_Data.txt in Testbench/data_files/
+00000000//Which ports need loopback( loopback not possible, since, output port does not match with any input port)
+0 //Maximum random skip value for config. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for load. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for str. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+58//No. of config words  starting from next
+20000000
+85000060
+83000060
+810000e0
+865ac688
+849aa688
+82faf708
+80fab688
+20000001
+80f9c688
+40000104//load prologue
+40020080//load epilogue
+40080009//Iteration count
+40100000//Load seq mem
+80000000
+80000000
+80000005
+80000040
+80000000
+80000082
+8000000a
+800000c2
+80000014
+80000102
+8000001e
+800000c2
+40400100//Fabric Input Read Sequence Prolog
+40420100//Fabric Input Read Sequence Epilog
+40480009//Fabric Input Read Sequence Iteration Count
+40500000//Fabric Input Read Sequence Memory
+92c01c00
+80018238
+80000000
+80000000
+b2c21c20
+80018638
+80000000
+80000000
+40800100//Fabric Output Write Sequence Prolog
+40820080//Fabric Output Write Sequence Epilog
+40880009//Fabric Output Write Sequence Iteration Count
+53900007
+80000860
+80060000
+80000821
+80060000
+40c00080//Store Sequence Prolog depth
+40c20080//Store Sequence Epilog depth
+40c80013//Store Sequence Iteration Count
+40d00000//Store Sequence Memory
+80000140
+800004c0
+40180000//Load Reg lookup
+80000020
+80020000
+80000821
+80020000
+80020000
+80020000
+80821000
+80020000
+80860000
+80020000
+40200000//Load Base address lookup
+80000000
+80000000
+800007d0
+80000000
+40280000//Load Loop Offset lookup
+8000000a
+80000000
+80000014
+80000000
+40300000//Load Spill Offset lookup
+80000050
+80000000
+800000a0
+80000000
+40d80000//Store Base address lookup
+80000000
+80000000
+40e00000//Store offset address lookup
+80000005
+80000000
+40e80000//Store spill offset address lookup
+8000005a
+80000000
+00000001//Start Compute

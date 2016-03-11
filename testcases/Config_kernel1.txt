@@ -1,0 +1,129 @@
+//Config_kernel1.txt
+//The File has to be saved as Config_Data.txt in Testbench/data_files/
+00000000//Which ports need loopback( loopback not possible, since, output port
+does not match with any input port)
+0 //Maximum random skip value for config. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for load. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for str. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+76//No. of config words  starting from next
+20000000
+85000060
+83000060
+810000e0
+865ac688
+849aa688
+82faf708
+80fab688
+20000001
+80f9c688
+40000307//load prologue
+40020000//load epilogue
+40080006//Iteration count
+40100000//Load seq mem
+80000000
+80000000
+80000001
+80000040
+80000000
+80000082
+80000002
+800000c2
+80000002
+80000100
+80000001
+80000142
+80000003
+80000182
+80000003
+800001c0
+80000004
+80000202
+80000004
+80000040
+80000005
+800000c2
+80000005
+80000100
+80000006
+80000182
+40400182//Fabric Input Read Sequence Prolog
+40420000//Fabric Input Read Sequence Epilog
+40480006//Fabric Input Read Sequence Iteration Count
+40500000//Fabric Input Read Sequence Memory
+92c01c00
+80018238
+80000000
+80000000
+b2c21c20
+80018638
+80000000
+80000000
+d2c41c40
+80018a38
+80000000
+80000000
+92c01c00
+80018238
+80000000
+80000000
+b2c21c20
+80018638
+80000000
+80000000
+40800000//Fabric Output Write Sequence Prolog
+40820000//Fabric Output Write Sequence Epilog
+40880000//Fabric Output Write Sequence Iteration Count
+53900004//Fabric Output Destination 
+40c00080//Store Sequence Prolog depth
+40c20000//Store Sequence Epilog depth
+40c80014//Store Sequence Iteration Count
+40d00000//Store Sequence Memory
+80000020
+800004c0
+40180000//Load Reg lookup
+80000020
+80020000
+80000821
+80020000
+80020000
+80020000
+80822000
+80020000
+80000862
+80020000
+80021000
+80020000
+80860000
+80020000
+800008a0
+80020000
+808a1000
+80020000
+40200000//Load Base address lookup
+80000000
+80000000
+800007d0
+80000000
+40280000//Load Loop Offset lookup
+80000003
+80000000
+80000003
+80000000
+40300000//Load Spill Offset lookup
+8000000f
+80000000
+8000000f
+80000000
+40d80000//Store Base address lookup
+80000fa0
+80000000
+40e00000//Store offset address lookup
+80000001
+80000000
+40e80000//Store spill offset address lookup
+80000013
+80000000
+00000001//Start Compute

@@ -1,0 +1,162 @@
+//Config_2.txt
+//The File has to be saved as Config_Data.txt in Testbench/data_files/
+00000006//Which ports need loopback(used only in loopback testing, One Hot Encoded, Here Ports 1 and 2)
+0 //Maximum random skip value for config. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for load. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for str. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+98//No. of config words  starting from next
+20000000
+81000090
+825ac688
+80fab688
+20000001
+81000061
+82dac688
+80fab888
+20000002
+81000060
+82dac688
+80fab888
+40000405//load prologue
+40020003//load epilogue
+40080005//Iteration count
+40100000//Load seq mem
+80000000
+80000000
+80000000
+80000042
+80000004
+80000080
+80000002
+80000042
+80000001
+800000C4
+80000008
+80000000
+80000004
+80000042
+80000003
+800000C4
+80000000
+80000106
+8000000C
+80000080
+80000006
+80000042
+80000005
+800000C4
+80000003
+80000106
+80000007
+800000C4
+80000006
+80000106
+80000009
+80000106
+40180000//Load Reg lookup
+80000031//B0 Ind 17
+80020000
+80000B40//B1 Ind 13
+80020000
+80000033//B0 Ind 19
+80020000
+8003F000//B2 Ind 31
+80020000
+80E00000//B3 Ind 24
+80020000
+40200000//Load Base address lookup
+90000000
+80000000
+88000000
+80000000
+90000000
+80000000
+90000000
+80000001
+40280000//Load Loop Offset lookup
+80000008
+80000000
+80000004
+80000000
+80000004
+80000000
+80000006
+80000000
+40300000//Load Spill Offset lookup
+80000004
+80000000
+80000002
+80000000
+80000002
+80000000
+80000003
+80000000
+40400102//Fabric Input Prologue
+40420002//Fabric Input Epilogue
+40480005//Fabric Input Iteration count
+40500000//Fabric Input Sequence Memory
+80DB3E20//(P0 -> B(0,17), P19 -> B(1,13)
+80000000
+80000000
+80000000
+E1DB3E60//(P0 -> B(0,19), P19 -> B(1,13), P1 -> B(2,31)
+8000001F
+80000000
+80000000
+E1DB3E20//(P0 -> B(0,17), P19 -> B(1,13), P1 -> B(2,31), P2 -> B(3,24)
+8001E05F
+80000000
+80000000
+E1DB3E60//(P0 -> B(0,17), P19 -> B(1,13), P1 -> B(2,31), P2 -> B(3,24)
+8001E05F
+80000000
+80000000
+E1000000//P1 -> B(2,31), P2 -> B(3,24)
+8001E05F
+80000000
+80000000
+80000000//P2 -> B(3,24)
+8001E040
+80000000
+80000000
+41900004//Fabric Output Destination P1 to str
+42900004//Fabric Output Destination P2 to str
+40C00203//Store Seq Prologue
+40C20001//Store Seq Epilogue
+40C80005//Store Seq Iteration Count
+40D00000//Store Sequence Memory
+80000000
+80000040
+800000A0
+80000040
+80000021
+80000080
+80000140
+80000040
+80000061
+80000080
+800001E0
+80000040
+800000A1
+80000080
+800000E1
+80000080
+40D80000//Store Base addr lookup
+B8000500
+80000000
+C8000AF0
+80000000
+40E00000//Store Offset lookup
+8000000A
+80000000
+80000004
+80000000
+40E80000//Store Spill Offset lookup
+80000005
+80000000
+80000002
+80000000
+00000001//Start Compute

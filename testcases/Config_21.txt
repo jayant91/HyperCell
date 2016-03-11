@@ -1,0 +1,221 @@
+//Config_21.txt
+//The File has to be saved as Config_Data.txt in Testbench/data_files/
+00000000//This doesnot work with loopback
+0 //Maximum random skip value for config. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for load. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for str. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+D3//No. of config words  starting from next
+20000000
+810000e0
+8afac681
+88fac4c8
+86fac650
+84fac4c8
+82fac650
+80fab888
+20000001
+8afac650
+80f9ca88
+20000002
+810000ec
+8afac681
+80fab888
+20000003
+8afac650
+80f9ca88
+20000004
+830000cd
+81000026
+80fab888
+20000005
+84e2c68e
+82e0468d
+80faca88
+40000102//load prologue
+40020002//load epilogue
+40080002//Iteration count
+40100000//Load seq mem
+80000000
+80000000
+80000004
+80000080
+80000008
+80000040
+8000000C
+80000080
+80000010
+80000040
+80000014
+800000C0
+40180000//Load Reg lookup
+80800800//B1,B3,B5,B7 Ind0
+80030010
+A0820800//B1,B2,B3,B4,B5,B6,B7 Ind0
+80030410
+E1861840//B1,B2,B3,B4,B5,B6,B7 Ind1
+80030C30
+A1021000//B2,B4,B6 Ind1
+80020420
+40200000//Load Base address lookup
+F0000000
+80000000
+40280000//Load Loop Offset lookup
+80000008
+80000000
+40400407//Fabric Input Prologue
+40420000//Fabric Input Epilogue
+40480007//Fabric Input Iteration count
+40500000//Fabric Input Sequence Memory
+A1C00000//(P0 -> B(1,0), P1 -> B(2,1), P2 -> B(3,0), P3 -> B(4,1), P4 -> B(5,0), P6 -> B(6,1), P7 -> B(7,0) 
+98478058
+81F09B01
+80000006
+81C20000//(P0 -> B(1,1), P1 -> B(2,0), P2 -> B(3,1), P3 -> B(4,0), P4 -> B(5,1), P6 -> B(6,0), P7 -> B(7,1) 
+98078458
+89F01B09
+80000006
+A1C00000//(P0 -> B(1,0), P1 -> B(2,1), P2 -> B(3,0), P3 -> B(4,1), P4 -> B(5,0), P6 -> B(6,1), P7 -> B(7,0) 
+98478058
+81F09B01
+80000006
+81C20000//(P0 -> B(1,1), P1 -> B(2,0), P2 -> B(3,1), P3 -> B(4,0), P4 -> B(5,1), P6 -> B(6,0), P7 -> B(7,1) 
+98078458
+89F01B09
+80000006
+A1C00000//(P0 -> B(1,0), P1 -> B(2,1), P2 -> B(3,0), P3 -> B(4,1), P4 -> B(5,0), P6 -> B(6,1), P7 -> B(7,0) 
+98478058
+81F09B01
+80000006
+81C20000//(P0 -> B(1,1), P1 -> B(2,0), P2 -> B(3,1), P3 -> B(4,0), P4 -> B(5,1), P6 -> B(6,0), P7 -> B(7,1) 
+98078458
+89F01B09
+80000006
+A1C00000//(P0 -> B(1,0), P1 -> B(2,1), P2 -> B(3,0), P3 -> B(4,1), P4 -> B(5,0), P6 -> B(6,1), P7 -> B(7,0) 
+98478058
+81F09B01
+80000006
+80000C13//P19 -> B(0,0))
+80000000
+80000000
+80000000
+80000C32//P18 -> B(0,1))
+80000000
+80000000
+80000000
+80000C51//P17 -> B(0,2))
+80000000
+80000000
+80000000
+80000C70//P16 -> B(0,3))
+80000000
+80000000
+80000000
+80000C8F//P15 -> B(0,4))
+80000000
+80000000
+80000000
+80000CAE//P14 -> B(0,5))
+80000000
+80000000
+80000000
+80000CCD//P13 -> B(0,6))
+80000000
+80000000
+80000000
+80000CEC//P12 -> B(0,7))
+80000000
+80000000
+80000000
+40800080//Fabric Output Prologue
+40820000//Fabric Output Epilogue
+40880007//Fabric Output Iteration count
+40900003//Fabric Output Destination 
+80000020//Reg0 Index 0
+80060000
+41900003//Fabric Output Destination 
+80000022//Reg0 Index 2
+80060000
+42900003//Fabric Output Destination 
+80000021//Reg0 Index 1
+80060000
+43900003//Fabric Output Destination 
+80000023//Reg0 Index 3
+80060000
+44900003//Fabric Output Destination 
+80000024//Reg0 Index 4
+80060000
+45900003//Fabric Output Destination 
+80000026//Reg0 Index 6
+80060000
+46900003//Fabric Output Destination 
+80000025//Reg0 Index 5
+80060000
+47900003//Fabric Output Destination 
+80000027//Reg0 Index 7
+80060000
+53900004//Fabric Output Destination P19 to str
+52900004//Fabric Output Destination P18 to str
+51900004//Fabric Output Destination P17 to str
+50900004//Fabric Output Destination P16 to str
+4F900004//Fabric Output Destination P15 to str
+4E900004//Fabric Output Destination P14 to str
+4D900004//Fabric Output Destination P13 to str
+4C900004//Fabric Output Destination P12 to str
+40C00400//Store Seq Prologue
+40C20000//Store Seq Epilogue
+40C80007//Store Seq Iteration Count
+40D00000//Store Sequence Memory
+80000000//P19
+800004C0
+80000001//P18
+80000480
+80000002//P17
+80000440
+80000003//P16
+80000400
+80000004//P15
+800003C0
+80000005//P14
+80000380
+80000006//P13
+80000340
+80000007//P12
+80000300
+40D80000//Store Base addr lookup
+88000000
+80000000
+90000000
+80000000
+98000000
+80000000
+A0000000
+80000000
+A8000000
+80000000
+B0000000
+80000000
+B8000000
+80000000
+C0000000
+80000000
+40E00000//Store Offset lookup
+80000013
+80000000
+80000012
+80000000
+80000011
+80000000
+80000010
+80000000
+8000000F
+80000000
+8000000E
+80000000
+8000000D
+80000000
+8000000C
+80000000
+00000001//Start Compute

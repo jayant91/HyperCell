@@ -1,0 +1,122 @@
+//Config_7.txt
+//The File has to be saved as Config_Data.txt in Testbench/data_files/
+0008006A//Which ports need loopback(used only in loopback testing, One Hot Encoded, Here Ports 1,3,5,19,6)
+0 //Maximum random skip value for config. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for load. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+0 //Maximum random skip value for str. 0 means full rate, N means 1 skip in
+  //N, Maximum F
+6A//No. of config words  starting from next
+20000000
+83000060
+810000e0
+845ac688
+82faa708
+80fab688
+20000001
+80f9ca88
+20000002
+810000e0
+80fab688
+20000003
+80f9ca88
+20000004
+83000030
+810000e0
+80fab688
+20000005
+84e2c688
+82f8468d
+80f9ca88
+40000100//load prologue
+40020000//load epilogue
+40080010//Iteration count
+40100000//Load seq mem
+80000055
+80000000
+80000066
+80000080
+40180000//Load Reg lookup
+A0820820//B0-B7 Ind0
+80010410
+80000861//B0-B1 Ind1
+80020000
+A28A28A2//B0-B7 Ind2
+80011451
+800008E3//B0-B1 Ind3
+80020000
+40200000//Load Base address lookup
+F0000000
+80000000
+40280000//Load Loop Offset lookup
+80000022
+80000000
+//40300000//Load Spill Offset lookup
+//80000003
+//80000000
+40400200//Fabric Input Prologue
+40420000//Fabric Input Epilogue
+40480010//Fabric Input Iteration count
+40500000//Fabric Input Sequence Memory
+80C13C12//(P18 -> B(0,0), P19 -> B(1,0), P0 -> B(2,0), P1 -> B(3,0), P2 -> B(4,0), P3 -> B(5,0), P4 -> B(6,0), P5 -> B(7,0) 
+F8058038
+81701300
+80000006
+80C27C26//(P6 -> B(0,1), P7 -> B(1,1) 
+80000000
+80000000
+80000000
+C0C53C52//(P18 -> B(0,2), P19 -> B(1,2), P0 -> B(2,2), P1 -> B(3,2), P2 -> B(4,2), P3 -> B(5,2), P4 -> B(6,2), P5 -> B(7,2) 
+F8858838
+91711310
+80000006
+80C67C66//(P6 -> B(0,3), P7 -> B(1,3) 
+80000000
+80000000
+80000000
+41900004//Fabric Output Destination P1 to str
+43900004//Fabric Output Destination P3 to str
+45900004//Fabric Output Destination P5 to str
+53900004//Fabric Output Destination P19 to str
+46900004//Fabric Output Destination P6 to str
+40C00280//Store Seq Prologue
+40C20000//Store Seq Epilogue
+40C80020//Store Seq Iteration Count
+40D00000//Store Sequence Memory
+80E00000
+80000040
+81C00001
+800000C0
+83800002
+80000140
+80700003
+800004C0
+87000004
+80000180
+40D80000//Store Base addr lookup
+B8000500
+80000000
+C8000AF0
+80000000
+B0000160
+80000000
+C0000100
+80000000
+80000100
+80000000
+40E00000//Store Offset lookup
+80000004
+80000000
+80000002
+80000000
+8000000E
+80000000
+80000101
+80000000
+80000222
+80000000
+//40E80000//Store Spill Offset lookup
+//80000005
+//80000000
+00000001//Start Compute

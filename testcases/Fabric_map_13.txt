@@ -1,0 +1,27 @@
+//{xAbs,yAbs,(EastPortSel,NorthPortSel,WestPortSel,SouthPortSel, //NorthEastPortSel,NorthWestPortSel,SouthWestPortSel,SouthEastPortSel),OpCode,OpreandASel,OperandBSel} 
+//Input Ports P0 t0 P19
+//Output Port P1,P3,P5,P6,P8,P10,P12,P14,P16,P18
+{0,0,(X,X,X,X,S,X,X,X),ADD,SW,SE,(F,F)}
+{1,0,(X,X,X,NW,X,S,X,X),X,X,X,(F,F)}
+{2,0,(X,X,X,X,S,X,X,X),ADD,SW,SE,(F,F)}
+{3,0,(X,X,X,NW,X,S,X,X),X,X,X,(F,F)}
+{4,0,(X,X,X,X,S,X,X,X),ADD,SW,SE,(F,F)}
+{5,0,(X,X,X,NW,X,S,X,X),X,X,X,(F,F)}
+{0,1,(X,X,X,X,W,X,X,X),ADD,NW,SW,(F,F)}
+{0,2,(X,X,SE,X,X,X,X,W),X,X,X,(F,F)}
+{0,3,(X,X,X,X,W,X,X,X),ADD,NW,SW,(F,F)}
+{0,4,(X,X,SE,X,X,X,X,W),ADD,NW,NE,(F,F)}
+{0,5,(X,X,X,X,X,X,X,N),X,X,X,(F,F)}
+{1,5,(X,SW,X,X,X,X,N,X),X,X,X,(F,F)}
+{2,4,(X,X,X,X,X,X,X,X),ADD,NW,NE,(F,F)}
+{2,5,(X,X,X,X,X,X,X,N),X,X,X,(F,F)}
+{3,5,(X,SW,X,X,X,X,N,X),X,X,X,(F,F)}
+{4,4,(X,X,X,X,X,X,X,X),ADD,NW,NE,(F,F)}
+{4,5,(X,X,X,X,X,X,X,N),X,X,X,(F,F)}
+{5,5,(X,SW,X,X,X,X,N,X),X,X,X,(F,F)}
+{4,3,(X,X,X,X,X,X,X,X),ADD,SE,NE,(F,F)}
+{5,3,(NW,X,X,X,X,E,X,X),X,X,X,(F,F)}
+{5,4,(X,X,X,X,X,X,E,X),X,X,X,(F,F)}
+{4,1,(X,X,X,X,X,X,X,X),ADD,SE,NE,(F,F)}
+{5,1,(NW,X,X,X,X,E,X,X),X,X,X,(F,F)}
+{5,2,(X,X,X,X,X,X,E,X),X,X,X,(F,F)}
