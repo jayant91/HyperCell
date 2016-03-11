@@ -1,24 +1,22 @@
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.32.jar: class Chisel.Bundle now provided by /home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.29.jar[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	modified: Set(/home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala, /home/jayant/HyperCell/Controller/storeSeqCtrl.scala, /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala, /home/jayant/HyperCell/Controller/loadSeqCtrl.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set(/home/jayant/HyperCell/Controller/controllerTop.scala)[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set(/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.32.jar)[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala, /home/jayant/HyperCell/Controller/storeSeqCtrl.scala, /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala, /home/jayant/HyperCell/Controller/loadSeqCtrl.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/jayant/HyperCell/Controller/controllerTop.scala)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set(/home/jayant/HyperCell/Controller/fabricConfigure.scala, /home/jayant/HyperCell/Controller/controllerLocalStorage.scala, /home/jayant/HyperCell/Controller/fifo.scala, /home/jayant/HyperCell/Controller/fabOutSeqArb.scala, /home/jayant/HyperCell/Controller/fabInSeqDP.scala, /home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala, /home/jayant/HyperCell/Controller/RRArbiter.scala, /home/jayant/HyperCell/Controller/parameters.scala, /home/jayant/HyperCell/Controller/controllerConfigure.scala, /home/jayant/HyperCell/Controller/loadSeqDP.scala, /home/jayant/HyperCell/Controller/fifoFabOut.scala, /home/jayant/HyperCell/Controller/storeSeqDP.scala, /home/jayant/HyperCell/Controller/controllerTop.scala, /home/jayant/HyperCell/Controller/memConfig.scala, /home/jayant/HyperCell/Controller/fabOutSeqTop.scala, /home/jayant/HyperCell/Controller/fabOutSeq.scala, /home/jayant/HyperCell/Controller/customReg.scala, /home/jayant/HyperCell/Controller/storeSeqCtrl.scala, /home/jayant/HyperCell/Controller/fabInSeq.scala, /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala, /home/jayant/HyperCell/Controller/memoryBank.scala, /home/jayant/HyperCell/Controller/loadSeqCtrl.scala, /home/jayant/HyperCell/Controller/storeSeq.scala, /home/jayant/HyperCell/Controller/loadSeq.scala, /home/jayant/HyperCell/Controller/globalParameters.scala, /home/jayant/HyperCell/Controller/fabOutSeqDP.scala, /home/jayant/HyperCell/Controller/mainConfigure.scala, /home/jayant/HyperCell/Controller/fabricConfigureTop.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/jayant/HyperCell/Controller/fabricConfigure.scala, /home/jayant/HyperCell/Controller/controllerLocalStorage.scala, /home/jayant/HyperCell/Controller/fifo.scala, /home/jayant/HyperCell/Controller/fabOutSeqArb.scala, /home/jayant/HyperCell/Controller/fabInSeqDP.scala, /home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala, /home/jayant/HyperCell/Controller/RRArbiter.scala, /home/jayant/HyperCell/Controller/parameters.scala, /home/jayant/HyperCell/Controller/controllerConfigure.scala, /home/jayant/HyperCell/Controller/loadSeqDP.scala, /home/jayant/HyperCell/Controller/fifoFabOut.scala, /home/jayant/HyperCell/Controller/storeSeqDP.scala, /home/jayant/HyperCell/Controller/controllerTop.scala, /home/jayant/HyperCell/Controller/memConfig.scala, /home/jayant/HyperCell/Controller/fabOutSeqTop.scala, /home/jayant/HyperCell/Controller/fabOutSeq.scala, /home/jayant/HyperCell/Controller/customReg.scala, /home/jayant/HyperCell/Controller/storeSeqCtrl.scala, /home/jayant/HyperCell/Controller/fabInSeq.scala, /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala, /home/jayant/HyperCell/Controller/memoryBank.scala, /home/jayant/HyperCell/Controller/loadSeqCtrl.scala, /home/jayant/HyperCell/Controller/storeSeq.scala, /home/jayant/HyperCell/Controller/loadSeq.scala, /home/jayant/HyperCell/Controller/globalParameters.scala, /home/jayant/HyperCell/Controller/fabOutSeqDP.scala, /home/jayant/HyperCell/Controller/mainConfigure.scala, /home/jayant/HyperCell/Controller/fabricConfigureTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Recompiling all 28 sources: invalidated sources (28) exceeded 50.0% of all sources[0m
-[0m[[0minfo[0m] [0mCompiling 28 Scala sources to /home/jayant/HyperCell/Controller/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/jayant/HyperCell/Controller/controllerTop.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/jayant/HyperCell/Controller/target/scala-2.11/classes...[0m
 [0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.11:component from component compiler for Scala 2.11.7[0m
 [0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.11:component from component compiler for Scala 2.11.7[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 4d1d1900, interfacing (CompilerInterface) with Scala compiler version 2.11.7[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 595fe7cd, interfacing (CompilerInterface) with Scala compiler version 2.11.7[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-deprecation[0m
 [0m[[0mdebug[0m] [0m	-feature[0m
@@ -28,229 +26,7 @@
 [0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes:/home/jayant/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar[0m
 [0m[[0mdebug[0m] [0m	-classpath[0m
 [0m[[0mdebug[0m] [0m	/home/jayant/HyperCell/Controller/target/scala-2.11/classes:/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.29.jar:/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar[0m
-[0m[[0mdebug[0m] [0mScala compilation took 14.419916141 s[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/storeSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/storeSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/storeSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/storeSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/storeSeqDP.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/storeSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fifo.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fifo.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fifo.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fifo.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fifo.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerLocalStorage.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabInSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/loadSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/storeSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/storeSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/storeSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/storeSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/storeSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/storeSeqCtrl.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/storeSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/controllerConfigure.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/controllerConfigure.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/controllerConfigure.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/controllerConfigure.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/controllerConfigure.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/loadSeqCtrl.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqCtrl.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/storeSeqCtrl.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/mainConfigure.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/mainConfigure.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/mainConfigure.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/mainConfigure.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/mainConfigure.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabOutSeqTop.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabOutSeqTop.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabOutSeqTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabOutSeqTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabOutSeqTop.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/memConfig.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/memConfig.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/memConfig.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/memConfig.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/memConfig.scala source file has the following implicit definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	cmdToId, ordering, canBuildFrom, mkOrderingOps.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] The following member ref dependencies of /home/jayant/HyperCell/Controller/memConfig.scala are invalidated:[0m
-[0m[[0mdebug[0m] [0m[naha] 	/home/jayant/HyperCell/Controller/fabInSeqDP.scala[0m
-[0m[[0mdebug[0m] [0m[naha] 	/home/jayant/HyperCell/Controller/fabOutSeqDP.scala[0m
-[0m[[0mdebug[0m] [0m[naha] 	/home/jayant/HyperCell/Controller/loadSeqDP.scala[0m
-[0m[[0mdebug[0m] [0m[naha] 	/home/jayant/HyperCell/Controller/storeSeqDP.scala[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/loadSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/loadSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/loadSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/loadSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/loadSeqDP.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/loadSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabInSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabInSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabInSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabInSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabInSeq.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/memoryBank.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/memoryBank.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/memoryBank.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/memoryBank.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/memoryBank.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerLocalStorage.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabOutSeqArb.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabOutSeqArb.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabOutSeqArb.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabOutSeqArb.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabOutSeqArb.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabOutSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabOutSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabOutSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabOutSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabOutSeq.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/customReg.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/customReg.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/customReg.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/customReg.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/customReg.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabInSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/loadSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/storeSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/memoryBank.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabricConfigure.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabricConfigure.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabricConfigure.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabricConfigure.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabricConfigure.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabricConfigureTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabOutSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabOutSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabOutSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabOutSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabOutSeqDP.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/storeSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/storeSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/storeSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/storeSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/storeSeq.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabInSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabInSeqDP.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabInSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabInSeqDP.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabInSeqDP.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabInSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/loadSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/loadSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/loadSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/loadSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/loadSeqCtrl.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/loadSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabricConfigureTop.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabricConfigureTop.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabricConfigureTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabricConfigureTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabricConfigureTop.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fabInSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fabInSeqCtrl.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fabInSeqCtrl.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabInSeq.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/loadSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/loadSeq.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/loadSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/loadSeq.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/loadSeq.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/controllerTop.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/RRArbiter.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/RRArbiter.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/RRArbiter.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/RRArbiter.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/RRArbiter.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqArb.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/controllerLocalStorage.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/controllerLocalStorage.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/controllerLocalStorage.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/controllerLocalStorage.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/controllerLocalStorage.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabInSeqDP.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/fifoFabOut.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/fifoFabOut.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/fifoFabOut.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/fifoFabOut.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/fifoFabOut.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
-[0m[[0mdebug[0m] [0m[naha] None of the modified names appears in /home/jayant/HyperCell/Controller/fabOutSeqArb.scala. This dependency is not being considered for invalidation.[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/jayant/HyperCell/Controller/controllerTop.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/jayant/HyperCell/Controller/controllerTop.scala...[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/jayant/HyperCell/Controller/controllerTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/jayant/HyperCell/Controller/controllerTop.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] The /home/jayant/HyperCell/Controller/controllerTop.scala source file has the following regular definitions changed:[0m
-[0m[[0mdebug[0m] [0m[naha] 	debug.[0m
-[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mScala compilation took 4.0407638 s[0m
 [0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
 [0m[[0mdebug[0m] [0m[naha] 	Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m

@@ -63,6 +63,9 @@ class controllerTop extends Module{
 	fabOutSeqClass.io.inConfig			:= mainConfigClass.io.fabOutConfig
 	fabOutSeqClass.io.inValid			:= mainConfigClass.io.fabOutConfigValid
 	
+	fabConfigClass.io.inConfig			:= io.inConfig
+//	fabConfigClass.io.inValid			:= io.inValid
+	
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
 	io.loadRqst					:= loadSeqClass.io.loadRqst
@@ -120,11 +123,11 @@ class controllerTop extends Module{
 	
 }
 
-object controllerTopMain {
-    def main(args: Array[String]) {
-    
-    	chiselMain(Array[String]("--backend", "v"),
-	() => Module(new controllerTop))
+//object controllerTopMain {
+//    def main(args: Array[String]) {
+//    
+//    	chiselMain(Array[String]("--backend", "v"),
+//	() => Module(new controllerTop))
 
-    }
-}
+//    }
+//}
