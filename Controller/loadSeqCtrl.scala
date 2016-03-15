@@ -161,7 +161,7 @@ class loadSeqCtrl extends Module{
 				}
 				
 			}
-			.elsewhen(io.inConfig(dataWidth -lWidth -1, dataWidth -lWidth -sWidth) === UInt(0)){
+			.elsewhen(io.inConfig(dataWidth -lWidth -1, dataWidth -lWidth -sWidth) === UInt(1)){
 				iterCount		:= io.inConfig(iterCntSize-1, 0)
 			}
 		}

@@ -24,7 +24,7 @@ class memConfig(memType: Int, memAddrWidth : Int, memDataWidth : Int) extends Mo
 	val memTypeMatch	= Reg(init = Bool(false))
 	val memAddr		= Reg(init = UInt(0, width = memAddrWidth))
 	val memData		= Vec.fill(iterCntSize){Reg(init = UInt(0, width = (dataWidth-1)))}
-	val iterCnt		= Reg(init = UInt(0))
+	val iterCnt		= Reg(init = UInt(0, width = log2Up(iterCntSize)))
 	val memOutValid		= Reg(init = Bool(false))
 	
 	val startCompute	= Bool()
@@ -85,7 +85,20 @@ class memConfig(memType: Int, memAddrWidth : Int, memDataWidth : Int) extends Mo
 		
 		startCompute		:= Bool(false)
 	}
-
+	.elsewhen(inConfigReg(dataWidth-1, combMemWidth) === UInt(258)){
+		
+		when(inConfigReg(memTypeWidth -1, memTypeWidth - vMemWidth) === UInt(memType)){
+		//Memeory Type Matched
+			memTypeMatch		:= Bool(true)
+		}
+		.otherwise{
+			memTypeMatch		:= Bool(false)
+		}
+		
+		startCompute		:= Bool(false)
+	}
+	
+	
 	when(memTypeMatch && (inConfigReg(dataWidth-1)=== UInt(1))){
 		memData(iterCnt)	:= inConfigReg(dataWidth-2, 0)
 		when(iterCnt < UInt(iterCntSize-1)){

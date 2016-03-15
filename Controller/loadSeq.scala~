@@ -57,40 +57,40 @@ class loadSeq extends Module{
 }
 
 
-class loadSeqTest(c: loadSeq) extends Tester(c){	
-	val range : Int = (scala.math.pow(2, 30)).toInt
-	var i0  : Int = 0x4007e4a1
-	
-      
-	poke(c.io.inConfig, i0)
-	poke(c.io.inValid, 0x1)
-	poke(c.io.loadRqstRdy, 0x1)
-	poke(c.io.loadResp, 0x98293429)
-	poke(c.io.loadRespValid, 0x0)
-	for(i<-0 until memBanks){
-		poke(c.io.memBankRdy(i), 0x1)
-	}
-	step(1)
-	
-	for(t<-0 until 5){
-		var i1  : Int = rnd.nextInt(range) + 0x80000000
-		poke(c.io.inConfig, i1)
-		peek(c.loadCtrlClass.prologueDepth)
-		peek(c.loadCtrlClass.steadyStateDepth)
-		peek(c.loadCtrlClass.epilogueDepth)
-		peek(c.loadCtrlClass.epilogueSpill)
-		peek(c.loadCtrlClass.iterCount)
-		step(1)
-	}
-}
-		
+//class loadSeqTest(c: loadSeq) extends Tester(c){	
+//	val range : Int = (scala.math.pow(2, 30)).toInt
+//	var i0  : Int = 0x4007e4a1
+//	
+//      
+//	poke(c.io.inConfig, i0)
+//	poke(c.io.inValid, 0x1)
+//	poke(c.io.loadRqstRdy, 0x1)
+//	poke(c.io.loadResp, 0x98293429)
+//	poke(c.io.loadRespValid, 0x0)
+//	for(i<-0 until memBanks){
+//		poke(c.io.memBankRdy(i), 0x1)
+//	}
+//	step(1)
+//	
+//	for(t<-0 until 5){
+//		var i1  : Int = rnd.nextInt(range) + 0x80000000
+//		poke(c.io.inConfig, i1)
+//		peek(c.loadCtrlClass.prologueDepth)
+//		peek(c.loadCtrlClass.steadyStateDepth)
+//		peek(c.loadCtrlClass.epilogueDepth)
+//		peek(c.loadCtrlClass.epilogueSpill)
+//		peek(c.loadCtrlClass.iterCount)
+//		step(1)
+//	}
+//}
+//		
 
-object loadSeqMain {
-    def main(args: Array[String]) {
-	chiselMainTest(Array[String]("--backend", "c", "--genHarness",  "--debug", "--compile", "--test"),
-	() => Module(new loadSeq())){c => new loadSeqTest(c)}
-    }
-}
+//object loadSeqMain {
+//    def main(args: Array[String]) {
+//	chiselMainTest(Array[String]("--backend", "c", "--genHarness",  "--debug", "--compile", "--test"),
+//	() => Module(new loadSeq())){c => new loadSeqTest(c)}
+//    }
+//}
 
 //object loadSeqMain {
 //    def main(args: Array[String]) {

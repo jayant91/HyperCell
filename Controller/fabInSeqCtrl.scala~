@@ -18,7 +18,7 @@ class fabInSeqCtrl extends Module{
 		val computeDone			= Bool(OUTPUT)
 	}
 	
-	val fabInSeqCtrlConfigure 		= Module(new controllerConfigure(2))
+	val fabInSeqCtrlConfigure 		= Module(new controllerConfigure(1))
 	val computeCtrl				= fabInSeqCtrlConfigure.io.computeCtrl
 	val computeCtrlValid			= fabInSeqCtrlConfigure.io.computeCtrlValid
 	fabInSeqCtrlConfigure.io.inConfig	:= io.inConfig

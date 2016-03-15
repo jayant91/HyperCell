@@ -20,7 +20,7 @@ class storeSeqCtrl extends Module{
 		val computeDone			= Bool(OUTPUT)
 	}
 	
-	val storeCtrlConfigure 		= Module(new controllerConfigure(1))
+	val storeCtrlConfigure 		= Module(new controllerConfigure(3))
 	val computeCtrl			= storeCtrlConfigure.io.computeCtrl
 	val computeCtrlValid		= storeCtrlConfigure.io.computeCtrlValid
 	storeCtrlConfigure.io.inConfig	:= io.inConfig
