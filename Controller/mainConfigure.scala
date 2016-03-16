@@ -33,6 +33,9 @@ class mainConfigure extends Module{
 	configReg		:= io.configData
 	configValidReg		:= io.configDataValid
 	
+	io.loadConfig		:= configReg
+	io.loadConfigValid	:= configValidReg
+	
 	io.storeConfig		:= configReg
 	io.storeConfigValid	:= configValidReg
 	

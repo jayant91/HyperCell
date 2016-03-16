@@ -7,43 +7,51 @@
 		revision="0.1-SNAPSHOT"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160304153130"/>
+		date="20160311123838"/>
 	<dependencies>
 		<module organisation="edu.berkeley.cs" name="chisel_2.11">
-			<revision name="2.2.32" status="release" pubdate="20160211010719" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+			<revision name="2.2.29" status="release" pubdate="20151001040455" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://chisel.eecs.berkeley.edu/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="1">
 				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
-				<metadata-artifact status="no" details="" size="3370" time="0" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/ivy-2.2.32.xml" searched="true" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.32/chisel_2.11-2.2.32.pom"/>
-				<caller organisation="default" name="controller_2.11" conf="compile" rev="latest.release" rev-constraint-default="latest.release" rev-constraint-dynamic="latest.release" callerrev="0.1-SNAPSHOT"/>
+				<metadata-artifact status="no" details="" size="3370" time="0" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/ivy-2.2.29.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.pom"/>
+				<caller organisation="default" name="controller_2.11" conf="compile" rev="2.2.29" rev-constraint-default="2.2.29" rev-constraint-dynamic="2.2.29" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="chisel_2.11" type="jar" ext="jar" status="no" details="" size="2375419" time="0" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.32.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.32/chisel_2.11-2.2.32.jar"/>
+					<artifact name="chisel_2.11" type="jar" ext="jar" status="no" details="" size="2059832" time="0" location="/home/jayant/.ivy2/cache/edu.berkeley.cs/chisel_2.11/jars/chisel_2.11-2.2.29.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/edu/berkeley/cs/chisel_2.11/2.2.29/chisel_2.11-2.2.29.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.11.7" status="release" pubdate="20150623014700" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.7/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="2">
+			<revision name="2.11.6" status="release" pubdate="20150226063115" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="2">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.7.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.pom"/>
-				<caller organisation="edu.berkeley.cs" name="chisel_2.11" conf="default, compile, runtime, master" rev="2.11.7" rev-constraint-default="2.11.7" rev-constraint-dynamic="2.11.7" callerrev="2.2.32"/>
+				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.6/scala-reflect-2.11.6.pom"/>
+				<caller organisation="edu.berkeley.cs" name="chisel_2.11" conf="default, compile, runtime, master" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="2.2.29"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4576443" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.11.7/scala-reflect-2.11.7.jar"/>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4450173" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.6/scala-reflect-2.11.6.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.11.7" status="release" pubdate="20150803213311" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.7/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, compile(*), runtime, runtime(*), master(compile), master" position="0">
+			<revision name="2.11.7" status="release" pubdate="20150803213311" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.7/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master, compile(*), runtime(*), master(compile)" position="0">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2653" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.7.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.pom"/>
+				<caller organisation="edu.berkeley.cs" name="chisel_2.11" conf="default, compile, runtime, master" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="2.2.29"/>
 				<caller organisation="default" name="controller_2.11" conf="compile" rev="2.11.7" rev-constraint-default="2.11.7" rev-constraint-dynamic="2.11.7" callerrev="0.1-SNAPSHOT"/>
-				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.11.7" rev-constraint-default="2.11.7" rev-constraint-dynamic="2.11.7" callerrev="2.11.7"/>
-				<caller organisation="edu.berkeley.cs" name="chisel_2.11" conf="default, compile, runtime, master" rev="2.11.7" rev-constraint-default="2.11.7" rev-constraint-dynamic="2.11.7" callerrev="2.2.32"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="2.11.6"/>
 				<artifacts>
 					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5745606" time="0" location="/home/jayant/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.11.7/scala-library-2.11.7.jar"/>
 					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.11.6" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master, default(compile), default" position="-1">
+				<evicted-by rev="2.11.7"/>
+				<caller organisation="default" name="controller_2.11" conf="compile" rev="2.11.7" rev-constraint-default="2.11.7" rev-constraint-dynamic="2.11.7" callerrev="0.1-SNAPSHOT"/>
+				<caller organisation="edu.berkeley.cs" name="chisel_2.11" conf="default, compile, runtime, master" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="2.2.29"/>
+				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="2.11.6"/>
+				<artifacts>
 				</artifacts>
 			</revision>
 		</module>

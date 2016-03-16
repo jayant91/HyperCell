@@ -18,7 +18,7 @@ class fabInSeqCtrl extends Module{
 		val computeDone			= Bool(OUTPUT)
 	}
 	
-	val fabInSeqCtrlConfigure 		= Module(new controllerConfigure(2))
+	val fabInSeqCtrlConfigure 		= Module(new controllerConfigure(1))
 	val computeCtrl				= fabInSeqCtrlConfigure.io.computeCtrl
 	val computeCtrlValid			= fabInSeqCtrlConfigure.io.computeCtrlValid
 	fabInSeqCtrlConfigure.io.inConfig	:= io.inConfig
@@ -54,7 +54,7 @@ class fabInSeqCtrl extends Module{
 	
 	
 	when(computeEnable && nextRequest){
-		when((epilogueDepth =/= UInt(0)) && (steadyStateDepth === UInt(0))){
+		when((epilogueDepth != UInt(0)) && (steadyStateDepth === UInt(0))){
 			computeDone	:=	(seqMemAddr === (lastAddr -UInt(1)))
 		}
 		
@@ -69,7 +69,7 @@ class fabInSeqCtrl extends Module{
 	
 	when(startComputeValid || resetComputeValid || computeDone){
 		//No need to start if none of prologue, epilogue and ss are 0.
-		when(startComputeValid && (lastAddr =/= UInt(0))){
+		when(startComputeValid && (lastAddr != UInt(0))){
 			computeEnable 	:= Bool(true)
 		}
 
@@ -93,7 +93,7 @@ class fabInSeqCtrl extends Module{
 			//end of iteration, loop back
 			when(seqMemAddr === (ssEnd - UInt(1))){
 				//if not last iteration or if there is spill, loop back to end of prologue
-				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill =/= UInt(0))){
+				when((currentIter < (iterCount - UInt(1))) || (epilogueSpill != UInt(0))){
 					seqMemAddr 		:= prologueDepth
 					currentIter		:= currentIter + UInt(1);
 				}
@@ -134,7 +134,7 @@ class fabInSeqCtrl extends Module{
 	
 	
 	when(io.inValid){
-		when(io.inConfig(datawidth-1, datawidth -fabSeqWidth) === UInt(259)){
+		when(io.inConfig(datawidth-1, datawidth -fabSeqWidth) === UInt(257)){
 			when(io.inConfig(datawidth -fabSeqWidth -1, datawidth -fabSeqWidth -dWidth) === UInt(0)){
 				when(io.inConfig(xBitNo) === UInt(0)){
 					prologueDepth		:= io.inConfig(prologueSize-1, 0)
