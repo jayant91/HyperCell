@@ -1,6 +1,0 @@
-//{xAbs,yAbs,(EastPortSel,NorthPortSel,WestPortSel,SouthPortSel, //NorthEastPortSel,NorthWestPortSel,SouthWestPortSel,SouthEastPortSel),OpCode,OpreandASel,OperandBSel} 
-//Input Ports P10,P11
-//Output Port P10
-{4,4,(X,X,X,X,X,X,X,X),ADD,NW,NE,(F,F)}
-{4,5,(X,X,X,X,X,X,X,N),X,X,X,(F,F)}
-{5,5,(X,SW,X,X,X,X,N,X),X,X,X,(F,F)}

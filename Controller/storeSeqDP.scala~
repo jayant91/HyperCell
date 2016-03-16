@@ -25,6 +25,7 @@ class storeSeqDP extends Module{
 		
 		val fabOutToStore		= Vec.fill(maxFabricInputs){UInt(INPUT, width = dataWidth)}
 		val fabOutToStoreValid		= Vec.fill(maxFabricInputs){Bool(INPUT)}
+		val fabOutToStoreRdy		= Vec.fill(maxFabricInputs){Bool(OUTPUT)}
 		
 		val computeDone			= Bool(OUTPUT)
 		
@@ -298,7 +299,8 @@ class storeSeqDP extends Module{
 			storeReqAddr			:= storeMemAddr
 			storeReqFifo.io.enqData		:= Cat(storeReqAddr(extMemAddrWidth-1, 0), storeReqData(dataWidth-1, 0))
 			storeReqFifo.io.enqValid	:= Bool(true)	
-			io.seqProceed			:= Bool(true)	
+			io.seqProceed			:= Bool(true)
+			io.fabOutToStoreRdy(i)		:= Bool(true)	
 				
 		}
 		.otherwise{
@@ -308,6 +310,7 @@ class storeSeqDP extends Module{
 			storeReqFifo.io.enqData		:= UInt(0)
 			storeReqFifo.io.enqValid	:= Bool(false)	
 			io.seqProceed			:= Bool(false)	
+			io.fabOutToStoreRdy(i)		:= Bool(false)	
 		}
 	}
 	

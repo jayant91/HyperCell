@@ -11,7 +11,7 @@ class fabricConfigureTop(dataWidth : Int, columns : Int, coordWidth: Int, swConf
 	val io		= new Bundle{
 		val inConfig		= UInt(INPUT, width = dataWidth)
 		val inValid		= Bool(INPUT)
-		val outConfig		= Vec.fill(n){UInt(OUTPUT, width = dataWidth+1)}
+		val outConfig		= Vec.fill(n){UInt(OUTPUT, width = dataWidth)}
 		val outValid		= Vec.fill(n){Bool(OUTPUT)}
 		val outRdy		= Vec.fill(n){Bool(INPUT)}
 		val rst			= Bool(INPUT)

@@ -7,7 +7,7 @@ class fabricConfigure(dataWidth : Int, columnIndex : Int, coordWidth: Int, swCon
 	val io 		= new Bundle{
 		val inConfig		= UInt(INPUT, width = dataWidth)
 		val inValid		= Bool(INPUT)		
-		val outConfig		= UInt(OUTPUT, width = dataWidth+1)
+		val outConfig		= UInt(OUTPUT, width = dataWidth)
 		val outValid		= Bool(OUTPUT)		
 		val outRdy		= Bool(INPUT)
 		val rst 		= Bool(INPUT)

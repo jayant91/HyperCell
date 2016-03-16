@@ -26,8 +26,8 @@ class HyperCellFabric[T <: Data] (gen: T, rows: Int, columns: Int) extends Modul
 	val io = new Bundle{
 		val inData 	= Vec.fill(2*m + 2*n -4){gen.clone.asInput}
 		val outData	= Vec.fill(2*m + 2*n -4){gen.clone.asOutput}
-		val enqRdy	= Vec.fill(2*m + 2*n -4){UInt(width=1).asInput}			//Confirm names
-		val deqValid	= Vec.fill(2*m + 2*n -4){UInt(width=1).asInput}			//Confirm names
+		val enqRdy	= Vec.fill(2*m + 2*n -4){UInt(width=1).asInput}	
+		val deqValid	= Vec.fill(2*m + 2*n -4){UInt(width=1).asInput}			
 		val deqRdy	= Vec.fill(2*m + 2*n -4){UInt(width=1).asOutput}	
 		val enqValid	= Vec.fill(2*m + 2*n -4){UInt(width=1).asOutput}
 	}
@@ -578,9 +578,9 @@ class HyperCellFabric[T <: Data] (gen: T, rows: Int, columns: Int) extends Modul
 
 
 
-object HyperCellFabricMain {
-    def main(args: Array[String]) {
-	chiselMain(Array[String]("--backend", "v"),
-	() => Module(new HyperCellFabric[UInt](UInt(width=33), 6 ,6)))
-    }
-}
+//object HyperCellFabricMain {
+//    def main(args: Array[String]) {
+//	chiselMain(Array[String]("--backend", "v"),
+//	() => Module(new HyperCellFabric[UInt](UInt(width=33), 6 ,6)))
+//    }
+//}

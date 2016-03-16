@@ -11,6 +11,7 @@ class storeSeq extends Module{
 		
 		val fabOutToStore		= Vec.fill(maxFabricInputs){UInt(INPUT, width = dataWidth)}
 		val fabOutToStoreValid		= Vec.fill(maxFabricInputs){Bool(INPUT)}
+		val fabOutToStoreRdy		= Vec.fill(maxFabricInputs){Bool(OUTPUT)}
 		
 		val storeMemData		= UInt(OUTPUT, (dataWidth + extMemAddrWidth))
 		val storeMemValid		= Bool(OUTPUT)
@@ -31,6 +32,7 @@ class storeSeq extends Module{
 
 	storeDPClass.io.fabOutToStore			:= io.fabOutToStore
 	storeDPClass.io.fabOutToStoreValid		:= io.fabOutToStoreValid
+	io.fabOutToStoreRdy				:= storeDPClass.io.fabOutToStoreRdy
 	
 	storeDPClass.io.storeMemRdy			:= io.storeMemRdy
 	io.storeMemData					:= storeDPClass.io.storeMemData

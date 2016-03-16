@@ -5,7 +5,7 @@ import java.io._
 import scala.io.Source
 
 class controllerTopTest(c: controllerTop) extends Tester(c){
-	val fileName	: String	="Config_1.txt"
+	val fileName	: String	="Config_2.txt"
 	
 	var config	: Long 		= 0
 	var nline 	: String	= null

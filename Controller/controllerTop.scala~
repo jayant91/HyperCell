@@ -7,6 +7,8 @@ import HyperCellParams.LoadSeqConfig._
 
 
 class controllerTop extends Module{
+	var n : Int		= 6
+	
 	val io 	= new Bundle {
 		val inConfig			= UInt(INPUT, width = dataWidth)
 		val inValid			= Bool(INPUT)
@@ -31,13 +33,13 @@ class controllerTop extends Module{
 		val fabOutValid			= Vec.fill(fabPortCount){Bool(INPUT)}
 		val fabOutRdy			= Vec.fill(fabPortCount){Bool(OUTPUT)}
 		
-//		val computeDone			= Bool()
-//		val storeDone			= Bool()
-//		val loadDone			= Bool()
+		val computeDone			= Bool(OUTPUT)
+		
+		val outConfig			= Vec.fill(n){UInt(OUTPUT, width = dataWidth)}
+		val outValid			= Vec.fill(n){Bool(OUTPUT)}
+		val outRdy			= Vec.fill(n){Bool(INPUT)}
 
-		val outConfig			= Vec.fill(6){UInt(OUTPUT, width = dataWidth+1)}
-		val outValid			= Vec.fill(6){Bool(OUTPUT)}
-		val outRdy			= Vec.fill(6){Bool(INPUT)}
+//		val loadDone			= Bool()
 		
 	}
 	
@@ -51,7 +53,7 @@ class controllerTop extends Module{
 	
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
-	for(i<-0 until 6){
+	for(i<-0 until n){
 		io.outConfig(i)			:= fabConfigClass.io.outConfig(i)
 		io.outValid(i)			:= fabConfigClass.io.outValid(i)
 		fabConfigClass.io.outRdy(i)	:= io.outRdy(i)
@@ -98,14 +100,14 @@ class controllerTop extends Module{
 	for(i<-0 until fabPortCount){
 		storeSeqClass.io.fabOutToStore(i)		:= fabOutSeqClass.io.fabOutStore(i)
 		storeSeqClass.io.fabOutToStoreValid(i)		:= fabOutSeqClass.io.fabOutStoreValid(i)
-	//	fabOutSeqClass.io.fabOutStoreRdy(i)		:= 			//TODO
+		fabOutSeqClass.io.fabOutStoreRdy(i)		:= storeSeqClass.io.fabOutToStoreRdy(i)
 	}	
 	
 	io.storeMemData					:= storeSeqClass.io.storeMemData
 	io.storeMemValid				:= storeSeqClass.io.storeMemValid
 	storeSeqClass.io.storeMemRdy			:= io.storeMemRdy
 	
-	//						:= storeSeqClass.io.computeDone		//TODO
+	io.computeDone					:= storeSeqClass.io.computeDone	
 	
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
@@ -118,7 +120,7 @@ class controllerTop extends Module{
 	for(i<-0 until memBankCount){
 		fabInSeqClass.io.fabStore(i)			:= fabOutSeqClass.io.fabOutLoc(i)
 		fabInSeqClass.io.fabStoreValid(i)		:= fabOutSeqClass.io.fabOutLocValid(i)
-		fabOutSeqClass.io.fabOutLocRdy(i)			:= fabInSeqClass.io.fabStoreRdy(i)
+		fabOutSeqClass.io.fabOutLocRdy(i)		:= fabInSeqClass.io.fabStoreRdy(i)
 	}
 	
 	//						:= fabInSeqClass.io.computeDone		//TODO

@@ -5,7 +5,7 @@ import java.io._
 import scala.io.Source
 
 class controllerTopTest(c: controllerTop) extends Tester(c){
-	val fileName	: String	="Config_1.txt"
+	val fileName	: String	="Config_2.txt"
 	
 	var config	: Long 		= 0
 	var nline 	: String	= null
@@ -24,9 +24,6 @@ class controllerTopTest(c: controllerTop) extends Tester(c){
 	poke(c.io.loadResp, 0x4535)
 	poke(c.io.loadRespValid, 0x0)
 	poke(c.io.storeMemRdy, 0x1)
-	for(i<-0 until 6){
-		poke(c.io.outRdy(i), 0x1)
-	}
 		
 	for(i<-0 until 81){
 		nline	= bufferedReader.readLine()
