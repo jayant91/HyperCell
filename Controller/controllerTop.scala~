@@ -34,6 +34,10 @@ class controllerTop extends Module{
 //		val computeDone			= Bool()
 //		val storeDone			= Bool()
 //		val loadDone			= Bool()
+
+		val outConfig			= Vec.fill(6){UInt(OUTPUT, width = dataWidth+1)}
+		val outValid			= Vec.fill(6){Bool(OUTPUT)}
+		val outRdy			= Vec.fill(6){Bool(INPUT)}
 		
 	}
 	
@@ -45,6 +49,13 @@ class controllerTop extends Module{
 	val mainConfigClass		= Module(new mainConfigure)
 	val fabConfigClass		= Module(new fabricConfigureTop(dataWidth, 6, 3, 24, 13))
 	
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	for(i<-0 until 6){
+		io.outConfig(i)			:= fabConfigClass.io.outConfig(i)
+		io.outValid(i)			:= fabConfigClass.io.outValid(i)
+		fabConfigClass.io.outRdy(i)	:= io.outRdy(i)
+	}
 	
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	
@@ -63,8 +74,8 @@ class controllerTop extends Module{
 	fabOutSeqClass.io.inConfig			:= mainConfigClass.io.fabOutConfig
 	fabOutSeqClass.io.inValid			:= mainConfigClass.io.fabOutConfigValid
 	
-	fabConfigClass.io.inConfig			:= io.inConfig
-//	fabConfigClass.io.inValid			:= io.inValid
+	fabConfigClass.io.inConfig			:= mainConfigClass.io.fabConfig
+	fabConfigClass.io.inValid			:= mainConfigClass.io.fabConfigValid
 	
 	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	

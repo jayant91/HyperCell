@@ -24,121 +24,10 @@ class controllerTopTest(c: controllerTop) extends Tester(c){
 	poke(c.io.loadResp, 0x4535)
 	poke(c.io.loadRespValid, 0x0)
 	poke(c.io.storeMemRdy, 0x1)
+	for(i<-0 until 6){
+		poke(c.io.outRdy(i), 0x1)
+	}
 		
-//	for(i<-0 until 25){
-//		nline	= bufferedReader.readLine()
-//		config	= java.lang.Long.parseLong(nline, 16)  
-//		
-//		poke(c.io.inConfig, config)
-//		
-//		peek(c.mainConfigClass.io.configData)
-//		peek(c.mainConfigClass.io.configDataValid)
-//		
-//		peek(c.fabConfigClass.io.inConfig)
-//		peek(c.fabConfigClass.io.outConfig)
-//		
-//		for(j<-0 until 6){
-//			peek(c.fabConfigClass.fabricConfigureClass(j).configValid)
-//			peek(c.fabConfigClass.fabricConfigureClass(j).inDataReg)
-//			peek(c.fabConfigClass.fabricConfigureClass(j).outDataReg)
-//		}
-//		
-//		
-//		
-//		step(1)
-//	}
-	
-//	for(i<-0 until 81){
-//		nline	= bufferedReader.readLine()
-//		config	= java.lang.Long.parseLong(nline, 16)  
-//		
-//		poke(c.io.inConfig, config)
-//		
-//		peek(c.mainConfigClass.io.configData)
-//		peek(c.mainConfigClass.io.configDataValid)
-//		peek(c.mainConfigClass.configReg)
-//		peek(c.mainConfigClass.configValidReg)
-//		
-//		peek(c.loadSeqClass.io.inConfig)
-//		peek(c.loadSeqClass.io.inValid)
-//		
-//		peek(c.loadSeqClass.loadCtrlClass.prologueDepth)
-//		peek(c.loadSeqClass.loadCtrlClass.epilogueDepth)	
-//		peek(c.loadSeqClass.loadCtrlClass.steadyStateDepth)
-//		peek(c.loadSeqClass.loadCtrlClass.epilogueSpill)
-//		peek(c.loadSeqClass.loadCtrlClass.iterCount)	
-//		
-//		
-//		step(1)
-//	}
-
-//	for(i<-0 until 81){
-//		nline	= bufferedReader.readLine()
-//		config	= java.lang.Long.parseLong(nline, 16)  
-//		
-//		poke(c.io.inConfig, config)
-//	
-//		peek(c.loadSeqClass.loadDPClass.loadSeqMemConfig.io.memData)
-//		peek(c.loadSeqClass.loadDPClass.loadSeqMemConfig.io.memAddr)
-//		peek(c.loadSeqClass.loadDPClass.loadSeqMemConfig.io.memOutValid)		
-////		for(j<-0 until 10){
-////			peek(c.loadSeqClass.loadDPClass.loadSeqMem(j))
-////		}
-
-//		peek(c.loadSeqClass.loadDPClass.regLkupMemConfig.io.memData)
-//		peek(c.loadSeqClass.loadDPClass.regLkupMemConfig.io.memAddr)
-//		peek(c.loadSeqClass.loadDPClass.regLkupMemConfig.io.memOutValid)
-//		
-//		peek(c.loadSeqClass.loadDPClass.baseAddrMemConfig.io.memData)
-//		peek(c.loadSeqClass.loadDPClass.baseAddrMemConfig.io.memAddr)
-//		peek(c.loadSeqClass.loadDPClass.baseAddrMemConfig.io.memOutValid)
-//		
-//		peek(c.loadSeqClass.loadDPClass.loopOffsetMemConfig.io.memData)
-//		peek(c.loadSeqClass.loadDPClass.loopOffsetMemConfig.io.memAddr)
-//		peek(c.loadSeqClass.loadDPClass.loopOffsetMemConfig.io.memOutValid)
-//		
-//		peek(c.loadSeqClass.loadDPClass.spillOffsetMemConfig.io.memData)
-//		peek(c.loadSeqClass.loadDPClass.spillOffsetMemConfig.io.memAddr)
-//		peek(c.loadSeqClass.loadDPClass.spillOffsetMemConfig.io.memOutValid)
-//		
-//		step(1)
-//	}	
-
-
-//	for(i<-0 until 81){
-//		nline	= bufferedReader.readLine()
-//		config	= java.lang.Long.parseLong(nline, 16)  
-//		
-//		poke(c.io.inConfig, config)
-//		
-//		peek(c.mainConfigClass.io.configData)
-//		peek(c.mainConfigClass.io.configDataValid)
-//		peek(c.mainConfigClass.configReg)
-//		peek(c.mainConfigClass.configValidReg)
-//		
-//		peek(c.fabInSeqClass.io.inConfig)
-//		peek(c.fabInSeqClass.io.inValid)
-//		
-//		peek(c.fabInSeqClass.ctrlClass.prologueDepth)
-//		peek(c.fabInSeqClass.ctrlClass.epilogueDepth)	
-//		peek(c.fabInSeqClass.ctrlClass.steadyStateDepth)
-//		peek(c.fabInSeqClass.ctrlClass.epilogueSpill)
-//		peek(c.fabInSeqClass.ctrlClass.iterCount)
-//		
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memTypeMatch)
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memData(0))
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memData(1))
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memData(2))
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.iterCnt)
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.io.memData)
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.io.memAddr)
-//		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.io.memOutValid)	
-//		
-//		
-//		step(1)
-//	}
-
-
 	for(i<-0 until 81){
 		nline	= bufferedReader.readLine()
 		config	= java.lang.Long.parseLong(nline, 16)  
@@ -147,8 +36,69 @@ class controllerTopTest(c: controllerTop) extends Tester(c){
 		
 		peek(c.mainConfigClass.io.configData)
 		peek(c.mainConfigClass.io.configDataValid)
-		peek(c.mainConfigClass.configReg)
-		peek(c.mainConfigClass.configValidReg)
+		
+		peek(c.fabConfigClass.io.inConfig)
+		peek(c.fabConfigClass.io.outConfig)
+		
+		for(j<-0 until 6){
+			peek(c.fabConfigClass.fabricConfigureClass(j).configValid)
+			peek(c.fabConfigClass.fabricConfigureClass(j).inDataReg)
+			peek(c.fabConfigClass.fabricConfigureClass(j).outDataReg)
+	
+		}
+		
+		peek(c.loadSeqClass.io.inConfig)
+		peek(c.loadSeqClass.io.inValid)
+		
+		peek(c.loadSeqClass.loadCtrlClass.prologueDepth)
+		peek(c.loadSeqClass.loadCtrlClass.epilogueDepth)	
+		peek(c.loadSeqClass.loadCtrlClass.steadyStateDepth)
+		peek(c.loadSeqClass.loadCtrlClass.epilogueSpill)
+		peek(c.loadSeqClass.loadCtrlClass.iterCount)	
+		
+	
+		peek(c.loadSeqClass.loadDPClass.loadSeqMemConfig.io.memData)
+		peek(c.loadSeqClass.loadDPClass.loadSeqMemConfig.io.memAddr)
+		peek(c.loadSeqClass.loadDPClass.loadSeqMemConfig.io.memOutValid)		
+//		for(j<-0 until 10){
+//			peek(c.loadSeqClass.loadDPClass.loadSeqMem(j))
+//		}
+
+		peek(c.loadSeqClass.loadDPClass.regLkupMemConfig.io.memData)
+		peek(c.loadSeqClass.loadDPClass.regLkupMemConfig.io.memAddr)
+		peek(c.loadSeqClass.loadDPClass.regLkupMemConfig.io.memOutValid)
+		
+		peek(c.loadSeqClass.loadDPClass.baseAddrMemConfig.io.memData)
+		peek(c.loadSeqClass.loadDPClass.baseAddrMemConfig.io.memAddr)
+		peek(c.loadSeqClass.loadDPClass.baseAddrMemConfig.io.memOutValid)
+		
+		peek(c.loadSeqClass.loadDPClass.loopOffsetMemConfig.io.memData)
+		peek(c.loadSeqClass.loadDPClass.loopOffsetMemConfig.io.memAddr)
+		peek(c.loadSeqClass.loadDPClass.loopOffsetMemConfig.io.memOutValid)
+		
+		peek(c.loadSeqClass.loadDPClass.spillOffsetMemConfig.io.memData)
+		peek(c.loadSeqClass.loadDPClass.spillOffsetMemConfig.io.memAddr)
+		peek(c.loadSeqClass.loadDPClass.spillOffsetMemConfig.io.memOutValid)
+		
+		
+		peek(c.fabInSeqClass.io.inConfig)
+		peek(c.fabInSeqClass.io.inValid)
+		
+		peek(c.fabInSeqClass.ctrlClass.prologueDepth)
+		peek(c.fabInSeqClass.ctrlClass.epilogueDepth)	
+		peek(c.fabInSeqClass.ctrlClass.steadyStateDepth)
+		peek(c.fabInSeqClass.ctrlClass.epilogueSpill)
+		peek(c.fabInSeqClass.ctrlClass.iterCount)
+		
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memTypeMatch)
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memData(0))
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memData(1))
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.memData(2))
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.iterCnt)
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.io.memData)
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.io.memAddr)
+		peek(c.fabInSeqClass.dpClass.fabInSeqMemConfig.io.memOutValid)	
+		
 		
 		peek(c.storeSeqClass.io.inConfig)
 		peek(c.storeSeqClass.io.inValid)

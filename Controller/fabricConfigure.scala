@@ -6,9 +6,10 @@ import HyperCellParams.GlobalConfig._
 class fabricConfigure(dataWidth : Int, columnIndex : Int, coordWidth: Int, swConfigRegWidth: Int, cuConfigRegWidth: Int ) extends Module{
 	val io 		= new Bundle{
 		val inConfig		= UInt(INPUT, width = dataWidth)
-		//val inValid		= Bool(INPUT)					//TO DO
+		val inValid		= Bool(INPUT)		
 		val outConfig		= UInt(OUTPUT, width = dataWidth+1)
-		//val outValid		= Bool(OUTPUT)					//TO DO
+		val outValid		= Bool(OUTPUT)		
+		val outRdy		= Bool(INPUT)
 		val rst 		= Bool(INPUT)
 	}
 	
@@ -21,7 +22,7 @@ class fabricConfigure(dataWidth : Int, columnIndex : Int, coordWidth: Int, swCon
 	ownIndex	:= UInt(columnIndex)
 	inDataReg	:= io.inConfig
 	
-	when(inDataReg(dataWidth-1) === UInt(0)){
+	when(inDataReg(dataWidth-1) === UInt(0) && io.inValid){
 		
 		when(inDataReg(dataWidth-2, dataWidth -3)=== UInt(1)){
 			when(inDataReg(2, 0) === ownIndex){
@@ -38,7 +39,7 @@ class fabricConfigure(dataWidth : Int, columnIndex : Int, coordWidth: Int, swCon
 	}
 
 	
-	when((inDataReg(dataWidth-1) === UInt(1)) && configValid){
+	when((inDataReg(dataWidth-1) === UInt(1)) && configValid && io.outRdy){
 		when(inDataReg(dataWidth-2, dataWidth -3)=== UInt(1)){
 
 				outDataReg(dataWidth)					:= UInt(1)
@@ -55,7 +56,15 @@ class fabricConfigure(dataWidth : Int, columnIndex : Int, coordWidth: Int, swCon
 					outDataReg(dataWidth - coordWidth -2, dataWidth - coordWidth -5)	:= UInt(0, width = 4)
 					outDataReg(swConfigRegWidth-1, 0)		:= inDataReg(swConfigRegWidth-1, 0)
 				}
+				
+				io.outValid			:= Bool(true)
 		}
+		.otherwise{
+			io.outValid			:= Bool(false)
+		}
+	}
+	.otherwise{
+		io.outValid		:= Bool(false)
 	}
 	
 	when(io.rst){

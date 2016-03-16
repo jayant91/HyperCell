@@ -24,6 +24,9 @@ class controllerTopTest(c: controllerTop) extends Tester(c){
 	poke(c.io.loadResp, 0x4535)
 	poke(c.io.loadRespValid, 0x0)
 	poke(c.io.storeMemRdy, 0x1)
+	for(i<-0 until 6){
+		poke(c.io.outRdy(i), 0x1)
+	}
 		
 	for(i<-0 until 81){
 		nline	= bufferedReader.readLine()
